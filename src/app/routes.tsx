@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { SignIn, SignUp } from "@clerk/clerk-react";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 
 /**
@@ -8,9 +9,6 @@ import { ProtectedRoute } from "../components/ProtectedRoute";
  *   /public/*  → always accessible (unauthenticated)
  *   /member/*  → any authenticated user
  *   /admin/*   → admin role only
- *
- * Actual page components (MemberLayout, AdminLayout, etc.)
- * will be added here as features are built.
  */
 export function AppRoutes() {
   return (
@@ -20,6 +18,16 @@ export function AppRoutes() {
 
       {/* Public — no auth required */}
       <Route path="/public" element={<div>Public — Dot Inspiration CBO</div>} />
+
+      {/* AUTH ROUTES (IMPORTANT) */}
+      <Route
+        path="/sign-in/*"
+        element={<SignIn routing="path" path="/sign-in" />}
+      />
+      <Route
+        path="/sign-up/*"
+        element={<SignUp routing="path" path="/sign-up" />}
+      />
 
       {/* Member area — authenticated users only */}
       <Route

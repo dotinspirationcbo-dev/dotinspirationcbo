@@ -1,11 +1,11 @@
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-import type { UserRole } from "../types/auth.types";
+import type { MemberRole } from "../types/auth.types";
 
 interface ProtectedRouteProps {
   children: React.ReactNode;
   /** If provided, user must have this exact role. */
-  requiredRole?: UserRole;
+  requiredRole?: MemberRole;
   /** Redirect destination when access is denied. Defaults to /public. */
   redirectTo?: string;
 }

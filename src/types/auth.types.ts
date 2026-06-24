@@ -1,10 +1,12 @@
-export type UserRole = "admin" | "member" | "volunteer";
+import type { MemberRole } from "./member.types";
+
+export type { MemberRole };
 
 export interface AuthUser {
   id: string;
   email: string;
   displayName: string;
-  role: UserRole;
+  role: MemberRole;
 }
 
 export interface AuthState {

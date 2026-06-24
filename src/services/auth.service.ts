@@ -1,4 +1,4 @@
-import type { AuthUser, AuthState, UserRole } from "../types/auth.types";
+import type { AuthUser, AuthState, MemberRole } from "../types/auth.types";
 import { mapClerkRole } from "../app/permissions/mapClerkRole";
 import { ROLES } from "../app/permissions/roles";
 
@@ -35,7 +35,7 @@ let _currentUser: AuthUser | null = null;
  * Defaults to "member" when no role metadata is present.
  */
 export function mapClerkUser(clerkUser: ClerkUserLike): AuthUser {
-  const role: UserRole = mapClerkRole(clerkUser);
+  const role: MemberRole = mapClerkRole(clerkUser);
 
   return {
     id: clerkUser.id,
@@ -62,7 +62,7 @@ export function getCurrentUser(): AuthUser | null {
   return _currentUser;
 }
 
-export function getUserRole(): UserRole | null {
+export function getUserRole(): MemberRole | null {
   return _currentUser?.role ?? null;
 }
 

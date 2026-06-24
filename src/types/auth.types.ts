@@ -1,7 +1,5 @@
 import type { MemberRole } from "./member.types";
 
-export type { MemberRole };
-
 export interface AuthUser {
   id: string;
   email: string;

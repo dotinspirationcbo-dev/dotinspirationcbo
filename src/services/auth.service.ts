@@ -1,4 +1,5 @@
-import type { AuthUser, AuthState, MemberRole } from "../types/auth.types";
+import type { AuthUser, AuthState } from "../types/auth.types";
+import type { MemberRole } from "../types/member.types";
 import { mapClerkRole } from "../app/permissions/mapClerkRole";
 import { ROLES } from "../app/permissions/roles";
 

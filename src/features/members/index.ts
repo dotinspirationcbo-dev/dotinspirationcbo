@@ -14,5 +14,6 @@ export type { Member, MemberRole, MemberStatus, CreateMemberData, UpdateMemberDa
 export { getMembers, getMemberById, createMember, updateMember } from "../../services/members.service";
 export { useMembers } from "./useMembers";
 export { useCreateMember } from "./useCreateMember";
+export { useUpdateMember } from "./useUpdateMember";
 export { MembersPage } from "./MembersPage";
 export { CreateMemberForm } from "./CreateMemberForm";

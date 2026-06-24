@@ -53,14 +53,12 @@ export async function createMember(data: CreateMemberData): Promise<Member> {
   return member;
 }
 
-export async function updateMember(
-  id: string,
-  data: UpdateMemberData
-): Promise<Member | null> {
+export async function updateMember(data: UpdateMemberData): Promise<Member> {
+  const { id, ...patch } = data;
   const index = _members.findIndex((m) => m.id === id);
-  if (index === -1) return null;
+  if (index === -1) throw new Error(`Member not found: ${id}`);
 
-  const updated: Member = { ..._members[index], ...data };
+  const updated: Member = { ..._members[index], ...patch };
   _members = [
     ..._members.slice(0, index),
     updated,

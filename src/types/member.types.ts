@@ -13,4 +13,10 @@ export interface Member {
 
 export type CreateMemberData = Omit<Member, "id" | "createdAt">;
 
-export type UpdateMemberData = Partial<CreateMemberData>;
+export type UpdateMemberData = {
+  id: string;
+  fullName?: string;
+  email?: string;
+  role?: MemberRole;
+  status?: MemberStatus;
+};

@@ -1,5 +1,6 @@
 import type { AuthUser, AuthState, UserRole } from "../types/auth.types";
 import { mapClerkRole } from "../app/permissions/mapClerkRole";
+import { ROLES } from "../app/permissions/roles";
 
 /**
  * Minimal structural interface for a Clerk user object.
@@ -66,15 +67,15 @@ export function getUserRole(): UserRole | null {
 }
 
 export function isAdmin(): boolean {
-  return _currentUser?.role === "admin";
+  return _currentUser?.role === ROLES.ADMIN;
 }
 
 export function isMember(): boolean {
-  return _currentUser?.role === "member";
+  return _currentUser?.role === ROLES.MEMBER;
 }
 
 export function isVolunteer(): boolean {
-  return _currentUser?.role === "volunteer";
+  return _currentUser?.role === ROLES.VOLUNTEER;
 }
 
 export function isAuthenticated(): boolean {

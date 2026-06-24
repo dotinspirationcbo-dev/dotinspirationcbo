@@ -1,7 +1,8 @@
+import type { ReactNode } from "react";
 import { BrowserRouter } from "react-router-dom";
 
 interface ProvidersProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export function Providers({ children }: ProvidersProps) {

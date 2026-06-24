@@ -1,30 +1,45 @@
 import { Routes, Route, Navigate } from "react-router-dom";
+import { ProtectedRoute } from "../components/ProtectedRoute";
 
 /**
  * Central route registry for Dot Inspiration CBO.
  *
  * Route namespaces:
- *   /              → public landing
- *   /public/*      → unauthenticated-accessible pages
- *   /member/*      → authenticated members (any role)
- *   /admin/*       → admin-only pages
+ *   /public/*  → always accessible (unauthenticated)
+ *   /member/*  → any authenticated user
+ *   /admin/*   → admin role only
  *
- * ProtectedRoute and RoleGuard components will be added here
- * once the auth provider is integrated.
+ * Actual page components (MemberLayout, AdminLayout, etc.)
+ * will be added here as features are built.
  */
-
 export function AppRoutes() {
   return (
     <Routes>
-      {/* Public */}
+      {/* Root redirect */}
       <Route path="/" element={<Navigate to="/public" replace />} />
+
+      {/* Public — no auth required */}
       <Route path="/public" element={<div>Public — Dot Inspiration CBO</div>} />
 
-      {/* Member area — guarded in next step */}
-      <Route path="/member/*" element={<div>Member area (protected — coming soon)</div>} />
+      {/* Member area — authenticated users only */}
+      <Route
+        path="/member/*"
+        element={
+          <ProtectedRoute>
+            <div>Member area — authenticated</div>
+          </ProtectedRoute>
+        }
+      />
 
-      {/* Admin area — guarded in next step */}
-      <Route path="/admin/*" element={<div>Admin area (protected — coming soon)</div>} />
+      {/* Admin area — admin role only */}
+      <Route
+        path="/admin/*"
+        element={
+          <ProtectedRoute requiredRole="admin">
+            <div>Admin area — admin role required</div>
+          </ProtectedRoute>
+        }
+      />
 
       {/* Catch-all */}
       <Route path="*" element={<Navigate to="/public" replace />} />

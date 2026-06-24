@@ -4,11 +4,11 @@
  * Public surface for this feature:
  *   Types   → src/types/member.types.ts
  *   Service → src/services/members.service.ts
- *   Hook    → src/hooks/useMembers.ts
- *
- * UI components and pages will be added here in the next step.
+ *   Hook    → src/features/members/useMembers.ts  (React Query)
+ *   Page    → src/features/members/MembersPage.tsx
  */
 
 export type { Member, MemberRole, MemberStatus, CreateMemberData, UpdateMemberData } from "../../types/member.types";
 export { getMembers, getMemberById, createMember, updateMember } from "../../services/members.service";
-export { useMembers } from "../../hooks/useMembers";
+export { useMembers } from "./useMembers";
+export { MembersPage } from "./MembersPage";

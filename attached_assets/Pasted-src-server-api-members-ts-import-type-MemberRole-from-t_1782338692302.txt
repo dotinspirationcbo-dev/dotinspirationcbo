@@ -1,0 +1,117 @@
+src/server/api/members.ts
+import type { MemberRole } from "../../types/member.types";
+import { canManageMembers } from "../../app/permissions/permissions";
+
+// Example in-memory or DB layer placeholder
+import { db } from "../db";
+
+export async function getMembers(currentUserRole: MemberRole) {
+  if (!canManageMembers(currentUserRole)) {
+    throw new Error("Unauthorized");
+  }
+
+  return db.members.findMany();
+}
+
+export async function createMember(
+  currentUserRole: MemberRole,
+  data: any
+) {
+  if (!canManageMembers(currentUserRole)) {
+    throw new Error("Unauthorized");
+  }
+
+  return db.members.create({ data });
+}
+✅ 2. React Query hook (data layer)
+src/features/members/useMembers.ts
+import { useQuery } from "@tanstack/react-query";
+import type { MemberRole } from "../../types/member.types";
+
+async function fetchMembers(role: MemberRole) {
+  const res = await fetch("/api/members", {
+    headers: {
+      "x-role": role,
+    },
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch members");
+  }
+
+  return res.json();
+}
+
+export function useMembers(role: MemberRole) {
+  return useQuery({
+    queryKey: ["members"],
+    queryFn: () => fetchMembers(role),
+  });
+}
+✅ 3. Members Admin Page (UI)
+src/features/members/MembersPage.tsx
+import { useMembers } from "./useMembers";
+import { useAuth } from "../../services/auth.service";
+import { canManageMembers } from "../../app/permissions/permissions";
+
+export function MembersPage() {
+  const { user } = useAuth();
+  const role = user?.role;
+
+  if (!role || !canManageMembers(role)) {
+    return <div>Access denied</div>;
+  }
+
+  const { data, isLoading, error } = useMembers(role);
+
+  if (isLoading) return <div>Loading members...</div>;
+  if (error) return <div>Failed to load members</div>;
+
+  return (
+    <div>
+      <h1>Members</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {data?.map((m: any) => (
+            <tr key={m.id}>
+              <td>{m.name}</td>
+              <td>{m.role}</td>
+              <td>{m.status}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+✅ 4. Route protection wrapper
+src/routes/AdminRoutes.tsx
+import { Route } from "wouter";
+import { MembersPage } from "../features/members/MembersPage";
+
+export function AdminRoutes() {
+  return (
+    <>
+      <Route path="/admin/members" component={MembersPage} />
+    </>
+  );
+}
+🔐 5. IMPORTANT: backend security rule (non-negotiable)
+
+Even though UI blocks access, real protection is:
+
+NEVER trust role from frontend headers in production
+
+Replace this later with:
+
+// production version should use Clerk session verification
+const role = await getRoleFromSession();

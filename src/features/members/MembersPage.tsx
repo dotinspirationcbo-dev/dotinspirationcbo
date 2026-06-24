@@ -1,6 +1,7 @@
 import { useAuth } from "../../hooks/useAuth";
 import { canManageMembers } from "../../app/permissions/permissions";
 import { useMembers } from "./useMembers";
+import { CreateMemberForm } from "./CreateMemberForm";
 import type { Member } from "../../types/member.types";
 
 /**
@@ -22,6 +23,8 @@ export function MembersPage() {
   return (
     <div>
       <h1>Members</h1>
+
+      <CreateMemberForm />
 
       <table>
         <thead>

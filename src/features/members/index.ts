@@ -10,7 +10,7 @@
  *             src/features/members/CreateMemberForm.tsx
  */
 
-export type { Member, MemberRole, MemberStatus, CreateMemberData, UpdateMemberData } from "../../types/member.types";
+export type { Member, MemberRole, MemberStatus, MemberEditableFields, CreateMemberData, UpdateMemberData } from "../../types/member.types";
 export { getMembers, getMemberById, createMember, updateMember } from "../../services/members.service";
 export { useMembers } from "./useMembers";
 export { useCreateMember } from "./useCreateMember";

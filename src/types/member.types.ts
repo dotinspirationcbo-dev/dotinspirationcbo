@@ -11,6 +11,8 @@ export interface Member {
   createdAt: string;
 }
 
+export type MemberEditableFields = Pick<Member, "fullName" | "email" | "role" | "status">;
+
 export type CreateMemberData = Omit<Member, "id" | "createdAt">;
 
 export type UpdateMemberData = {

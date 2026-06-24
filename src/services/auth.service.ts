@@ -1,4 +1,5 @@
 import type { AuthUser, AuthState, UserRole } from "../types/auth.types";
+import { mapClerkRole } from "../app/permissions/mapClerkRole";
 
 /**
  * Minimal structural interface for a Clerk user object.
@@ -10,6 +11,7 @@ interface ClerkUserLike {
   fullName?: string | null;
   username?: string | null;
   publicMetadata?: Record<string, unknown>;
+  unsafeMetadata?: Record<string, unknown>;
 }
 
 /**
@@ -32,9 +34,7 @@ let _currentUser: AuthUser | null = null;
  * Defaults to "member" when no role metadata is present.
  */
 export function mapClerkUser(clerkUser: ClerkUserLike): AuthUser {
-  const rawRole = clerkUser.publicMetadata?.role as string | undefined;
-  const role: UserRole =
-    rawRole === "admin" || rawRole === "volunteer" ? rawRole : "member";
+  const role: UserRole = mapClerkRole(clerkUser);
 
   return {
     id: clerkUser.id,

@@ -2,7 +2,11 @@ import type { ReactNode } from "react";
 import { ClerkProvider } from "@clerk/clerk-react";
 import { BrowserRouter } from "react-router-dom";
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY as string;
+// Strip "KEY=value" format in case the secret was stored with the key name prepended
+const _rawKey = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY as string;
+const PUBLISHABLE_KEY = _rawKey?.includes("=")
+  ? _rawKey.split("=").slice(1).join("=")
+  : _rawKey;
 
 if (!PUBLISHABLE_KEY) {
   throw new Error("Missing VITE_CLERK_PUBLISHABLE_KEY environment variable.");

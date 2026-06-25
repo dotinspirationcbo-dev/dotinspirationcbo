@@ -3,6 +3,12 @@ import { SignIn, SignUp } from "@clerk/clerk-react";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import { MembersPage } from "../features/members/MembersPage";
 import { DonationsPage } from "../features/donations/DonationsPage";
+import { PublicLayout } from "../features/public/PublicLayout";
+import { HomePage } from "../features/public/HomePage";
+import { AboutPage } from "../features/public/AboutPage";
+import { ProgramsPage } from "../features/public/ProgramsPage";
+import { LeadershipPage } from "../features/public/LeadershipPage";
+import { ContactPage } from "../features/public/ContactPage";
 import { SupportPage } from "../features/public/SupportPage";
 
 /**
@@ -21,8 +27,15 @@ export function AppRoutes() {
       {/* Root redirect */}
       <Route path="/" element={<Navigate to="/public" replace />} />
 
-      {/* Public — no auth required */}
-      <Route path="/public" element={<SupportPage />} />
+      {/* Public website — no auth required */}
+      <Route path="/public" element={<PublicLayout />}>
+        <Route index element={<HomePage />} />
+        <Route path="about"      element={<AboutPage />} />
+        <Route path="programs"   element={<ProgramsPage />} />
+        <Route path="leadership" element={<LeadershipPage />} />
+        <Route path="contact"    element={<ContactPage />} />
+        <Route path="support"    element={<SupportPage />} />
+      </Route>
 
       {/* Clerk auth UI routes */}
       <Route

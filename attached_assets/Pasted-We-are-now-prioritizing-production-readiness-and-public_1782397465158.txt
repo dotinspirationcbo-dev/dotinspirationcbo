@@ -1,0 +1,75 @@
+We are now prioritizing production readiness and public-facing quality for the Dot Inspiration CBO website.
+
+Do NOT build new features or new domains.
+
+Instead, focus only on polishing and completing the public NGO website.
+
+Tasks:
+
+1. Audit the entire public website:
+
+   * Homepage
+   * About page
+   * Programs page
+   * Team / Leadership page
+   * Contact page
+   * Support / Donate section
+
+2. Fix all incomplete or unprofessional elements:
+
+   * Any "0 leaders", "coming soon", or placeholder text
+   * Missing images or broken layouts
+   * Empty sections
+   * Inconsistent typography or spacing
+   * Any duplicated or unfinished UI components
+
+3. Ensure the following sections are fully polished and production-ready:
+
+   a) Hero Section
+
+   * Clear mission statement
+   * Strong CTA buttons (Join, Donate, Volunteer)
+
+   b) Programs Section
+
+   * Must clearly display all 4 program areas with clean descriptions
+
+   c) Impact Section
+
+   * Ensure statistics are visually appealing and correctly displayed
+
+   d) Leadership Section
+
+   * Ensure executive team displays correctly and is not empty
+
+   e) Support / Donate Section
+
+   * Must include:
+
+     * Phone: +256 794 722 080
+     * Email: [info@dotinspirationcbo.org](mailto:info@dotinspirationcbo.org)
+     * Bank: Exim Bank Uganda
+     * Account Name: Othieno Constant
+     * Account Number: 0071013100
+   * Present this professionally as "Support Our Work"
+
+4. Improve UI/UX polish:
+
+   * Consistent spacing and alignment
+   * Proper headings hierarchy
+   * Mobile responsiveness
+   * Clean footer with full organization details
+
+5. Ensure all pages feel like a real NGO website ready for donors, volunteers, and partners.
+
+6. Do NOT add new features, services, or domains.
+   Only fix, polish, and complete existing functionality.
+
+7. Run TypeScript check and ensure zero errors.
+
+Success criteria:
+
+* Website looks complete and professional
+* No placeholders or unfinished sections
+* No broken UI elements
+* Ready for public sharing with donors and partners

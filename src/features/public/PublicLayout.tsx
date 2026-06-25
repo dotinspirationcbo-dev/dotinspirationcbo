@@ -15,11 +15,11 @@ export function PublicLayout() {
       <nav className="pub-nav">
         <div className="pub-nav__inner">
           <Link to="/public" className="pub-nav__logo">
-            <div className="pub-nav__logo-mark">DI</div>
-            <div className="pub-nav__logo-text">
-              <strong>Dot Inspiration CBO</strong>
-              <span>Community Based Organisation</span>
-            </div>
+            <img
+              src="/logo.png"
+              alt="Dot Inspiration CBO"
+              className="pub-nav__logo-img"
+            />
           </Link>
 
           <ul className="pub-nav__links">
@@ -51,7 +51,7 @@ export function PublicLayout() {
       <footer className="pub-footer">
         <div className="pub-footer__grid">
           <div className="pub-footer__brand">
-            <strong>Dot Inspiration CBO</strong>
+            <img src="/logo.png" alt="Dot Inspiration CBO" className="pub-footer__logo" />
             <p>
               Serving Mukono District and surrounding communities since 2026.
               We deliver education, health, economic empowerment, and

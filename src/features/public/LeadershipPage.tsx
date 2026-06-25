@@ -50,7 +50,7 @@ export function LeadershipPage() {
 
       <section className="section">
         <div className="container">
-          <div className="text-center" style={{ marginBottom: 0 }}>
+          <div className="text-center section-intro">
             <span className="section-label">The People Behind the Mission</span>
             <h2 className="section-title">Meet Our Team</h2>
             <p className="section-subtitle">
@@ -75,7 +75,7 @@ export function LeadershipPage() {
       {/* Governance */}
       <section className="section section--alt">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "start" }}>
+          <div className="governance-grid">
             <div>
               <span className="section-label">Governance</span>
               <h2 className="section-title">How We Are Governed</h2>

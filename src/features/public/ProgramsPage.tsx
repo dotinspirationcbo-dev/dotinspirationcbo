@@ -77,11 +77,8 @@ export function ProgramsPage() {
           {PROGRAMS.map((p, i) => (
             <div
               key={p.title}
+              className={`prog-row ${i % 2 === 0 ? "prog-row--even" : "prog-row--odd"}`}
               style={{
-                display: "grid",
-                gridTemplateColumns: i % 2 === 0 ? "1fr 1.6fr" : "1.6fr 1fr",
-                gap: 48,
-                alignItems: "start",
                 marginBottom: i < PROGRAMS.length - 1 ? 72 : 0,
                 paddingBottom: i < PROGRAMS.length - 1 ? 72 : 0,
                 borderBottom: i < PROGRAMS.length - 1 ? "1px solid var(--border)" : "none",

@@ -71,7 +71,7 @@ export function HomePage() {
       {/* ── Programs Section ── */}
       <section className="section section--alt">
         <div className="container">
-          <div className="text-center">
+          <div className="text-center section-intro">
             <span className="section-label">What We Do</span>
             <h2 className="section-title">Our Program Areas</h2>
             <p className="section-subtitle">
@@ -97,7 +97,7 @@ export function HomePage() {
       {/* ── Impact Section ── */}
       <section className="section section--dark">
         <div className="container">
-          <div className="text-center">
+          <div className="text-center section-intro">
             <span className="section-label">Our Impact</span>
             <h2 className="section-title">Making a Measurable Difference</h2>
             <p className="section-subtitle">

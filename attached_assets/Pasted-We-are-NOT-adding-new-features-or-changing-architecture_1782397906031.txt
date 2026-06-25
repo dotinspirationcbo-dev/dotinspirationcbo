@@ -1,0 +1,81 @@
+We are NOT adding new features or changing architecture.
+
+We are performing a full UI/UX and content polish of the existing live Dot Inspiration CBO website.
+
+Goal:
+Transform the current website into a professional NGO-grade presentation website with strong visual hierarchy, readability, and trust.
+
+Keep:
+
+* All existing content
+* All existing sections
+* Current color theme
+* Current routing and functionality
+
+DO NOT:
+
+* Add new features
+* Add new pages
+* Change architecture
+* Rebuild components from scratch
+
+ONLY IMPROVE PRESENTATION AND CONTENT STRUCTURE.
+
+Tasks:
+
+1. Typography & hierarchy improvements:
+
+   * Improve heading structure (H1, H2, H3 consistency)
+   * Reduce repetition of "Dot Inspiration CBO" branding in headings
+   * Improve readability spacing between sections
+   * Ensure consistent font sizing across pages
+
+2. Layout & spacing polish:
+
+   * Add better section spacing (padding/margins)
+   * Ensure sections are visually separated like a modern NGO site
+   * Improve alignment consistency across all pages
+   * Fix any cramped or overly dense sections
+
+3. Remove visual clutter:
+
+   * Remove or fix any "0 Executive Leaders" or placeholder-like outputs
+   * Clean up empty states that look unprofessional
+   * Remove duplicate titles or repeated branding blocks
+
+4. Trust & NGO credibility improvements:
+
+   * Ensure Contact, Donate, and Support sections feel professional and trustworthy
+   * Make donation section visually structured (not plain text blocks)
+   * Improve presentation of bank details and phone/email info
+
+5. Improve key sections visually:
+
+   * Hero section: stronger headline + clear CTA hierarchy
+   * Programs section: cleaner card-style layout
+   * Impact section: make numbers visually balanced and readable
+   * Leadership section: ensure it does NOT show empty or zero values
+
+6. Footer refinement:
+
+   * Clean organization details
+   * Remove redundancy
+   * Make footer structured and readable
+
+7. Mobile responsiveness:
+
+   * Ensure all sections are properly spaced on mobile
+   * Fix any overflow or stacking issues
+
+8. Maintain current color theme exactly as-is.
+
+9. Do not break functionality or routing.
+
+10. Run TypeScript check and ensure zero errors.
+
+Success criteria:
+
+* Website looks like a real NGO organization website (not a dev prototype)
+* Clean spacing, hierarchy, and readability
+* No placeholders or broken-looking sections
+* Strong trust impression for donors and partners

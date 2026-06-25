@@ -106,7 +106,7 @@ export function AboutPage() {
       {/* Approach */}
       <section className="section">
         <div className="container">
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 48, alignItems: "center" }}>
+          <div className="approach-grid">
             <div>
               <span className="section-label">How We Work</span>
               <h2 className="section-title">Our Approach</h2>

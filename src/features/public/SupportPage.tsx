@@ -137,10 +137,7 @@ export function SupportPage() {
               skills, and networks matter just as much.
             </p>
           </div>
-          <div style={{
-            display: "grid", gridTemplateColumns: "repeat(3, 1fr)",
-            gap: 24, marginTop: 40,
-          }}>
+          <div className="ways-grid">
             {[
               ["🙋", "Volunteer",  "Join us in the community. We need health workers, teachers, and many other skilled volunteers."],
               ["📢", "Spread the Word", "Share our work with your network. Awareness creates partnerships and opens doors."],

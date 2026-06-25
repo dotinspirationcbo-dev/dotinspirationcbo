@@ -12,6 +12,26 @@ const NAV_LINKS = [
 export function PublicLayout() {
   return (
     <>
+      {/* ── Top announcement bar ── */}
+      <div className="top-bar">
+        <div className="top-bar__inner">
+          <span className="top-bar__tagline">
+            Dot Inspiration CBO · Empowering Youth Across Africa Since 2026
+          </span>
+          <div className="top-bar__contact">
+            <a href="mailto:info@dotinspirationcbo.org" className="top-bar__link">
+              <span className="top-bar__icon">✉</span>
+              info@dotinspirationcbo.org
+            </a>
+            <a href="tel:+256794722080" className="top-bar__link">
+              <span className="top-bar__icon">📞</span>
+              +256 794 722 080
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Main nav ── */}
       <nav className="pub-nav">
         <div className="pub-nav__inner">
           <Link to="/public" className="pub-nav__logo">
@@ -37,8 +57,11 @@ export function PublicLayout() {
           </ul>
 
           <div className="pub-nav__cta">
+            <Link to="/public/contact" className="btn btn-nav-outline">
+              Join Us
+            </Link>
             <Link to="/public/support" className="btn btn-primary">
-              Support Us
+              Donate
             </Link>
           </div>
         </div>

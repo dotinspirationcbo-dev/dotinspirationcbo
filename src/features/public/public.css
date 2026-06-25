@@ -119,12 +119,58 @@ a   { color: inherit; text-decoration: none; }
   border-color: var(--green-700);
 }
 .btn-outline-green:hover { background: var(--green-50); }
+.btn-nav-outline {
+  background: transparent;
+  color: var(--green-700);
+  border-color: var(--green-700);
+}
+.btn-nav-outline:hover { background: var(--green-50); }
+
+/* ── Top bar ─────────────────────────────────────────────── */
+.top-bar {
+  background: var(--green-900);
+  color: rgba(255,255,255,.75);
+  font-size: 0.78rem;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.top-bar__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.top-bar__tagline {
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.top-bar__contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-shrink: 0;
+}
+.top-bar__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: rgba(255,255,255,.75);
+  font-weight: 500;
+  transition: color .14s;
+}
+.top-bar__link:hover { color: var(--white); }
+.top-bar__icon { font-size: 0.72rem; }
 
 /* ── Navigation ──────────────────────────────────────────── */
 .pub-nav {
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 99;
   height: var(--nav-h);
   background: var(--white);
   border-bottom: 1px solid var(--border);

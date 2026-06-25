@@ -1,52 +1,56 @@
 const CONTACT_DETAILS = [
   {
-    icon: "📞",
-    label: "Phone / WhatsApp",
-    value: <a href="tel:+256794722080">+256 794 722 080</a>,
+    icon: "📧",
+    label: "Email Us",
+    value: <a href="mailto:info@dotinspirationcbo.org">info@dotinspirationcbo.org</a>,
+    note: "We respond within 24–48 hours",
   },
   {
-    icon: "📧",
-    label: "Email",
-    value: <a href="mailto:info@dotinspirationcbo.org">info@dotinspirationcbo.org</a>,
+    icon: "📞",
+    label: "Call Us",
+    value: <a href="tel:+256794722080">+256 794 722 080</a>,
+    note: "Mon – Fri, 8 AM – 5 PM EAT",
   },
   {
     icon: "📍",
-    label: "Location",
-    value: "Uganda, East Africa",
+    label: "Find Us",
+    value: "Nantabulirwa, Goma Division, Mukono District — Uganda",
+    note: "East Africa Operations Hub",
   },
   {
     icon: "🕐",
     label: "Office Hours",
     value: "Mon – Fri, 8:00 AM – 5:00 PM (EAT)",
+    note: "Saturday 9:00 AM – 1:00 PM",
   },
 ];
 
 const CONTACT_PURPOSES = [
   {
+    icon: "🤝",
+    title: "Partner With Us",
+    text: "Strategic partnerships that multiply community impact across Mukono District. We welcome NGOs, government bodies, schools, businesses, and international organisations.",
+    action: "Get in touch →",
+    href: "mailto:info@dotinspirationcbo.org",
+  },
+  {
+    icon: "🙋",
+    title: "Volunteer Today",
+    text: "Share your skills and time with communities that need you most. We welcome volunteers in education, health, community work, administration, and digital skills.",
+    action: "Become a volunteer →",
+    href: "mailto:info@dotinspirationcbo.org",
+  },
+  {
     icon: "❤️",
-    title: "Make a Donation",
-    text: "Support our programmes financially. Bank transfer, mobile money, and cash donations are all welcome.",
+    title: "Donate & Support",
+    text: "Fund education, health and empowerment projects that change lives. Every contribution — big or small — creates lasting impact across Mukono District.",
     action: "View banking details →",
     href: "/public/support",
   },
   {
-    icon: "🙋",
-    title: "Volunteer With Us",
-    text: "Join us on the ground. We welcome volunteers with skills in health, education, finance, IT, and communications.",
-    action: "Email us to volunteer →",
-    href: "mailto:info@dotinspirationcbo.org",
-  },
-  {
-    icon: "🤝",
-    title: "Partner With Us",
-    text: "We welcome NGO, government, and corporate partnerships that align with our mission.",
-    action: "Contact us to partner →",
-    href: "mailto:info@dotinspirationcbo.org",
-  },
-  {
     icon: "📰",
     title: "Media & Press",
-    text: "For media enquiries, interview requests, or programme information, please reach us by email.",
+    text: "For media enquiries, interview requests, or programme information, please reach us by email. We are happy to share our story and impact evidence.",
     action: "Email media enquiries →",
     href: "mailto:info@dotinspirationcbo.org",
   },
@@ -56,10 +60,10 @@ export function ContactPage() {
   return (
     <>
       <div className="page-hero">
-        <h1 className="page-hero__title">Contact Us</h1>
+        <h1 className="page-hero__title">Get In Touch</h1>
         <p className="page-hero__subtitle">
-          We would love to hear from you — whether you want to donate, volunteer,
-          partner, or simply learn more about our work.
+          We'd love to hear from you — whether you want to partner, volunteer,
+          donate, or simply learn more about our work in Mukono District.
         </p>
       </div>
 
@@ -68,7 +72,7 @@ export function ContactPage() {
           <div className="contact-page-grid">
             {/* Contact Details */}
             <div>
-              <span className="section-label">Get In Touch</span>
+              <span className="section-label">Contact Us</span>
               <h2 className="section-title">Reach Out to Us</h2>
               <p className="prose-text" style={{ marginBottom: 32 }}>
                 Our team is available Monday to Friday, 8:00 AM to 5:00 PM (EAT).
@@ -82,6 +86,11 @@ export function ContactPage() {
                     <div>
                       <div className="contact-item__label">{item.label}</div>
                       <div className="contact-item__value">{item.value}</div>
+                      {item.note && (
+                        <div style={{ fontSize: "0.78rem", color: "var(--muted)", marginTop: 2 }}>
+                          {item.note}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}

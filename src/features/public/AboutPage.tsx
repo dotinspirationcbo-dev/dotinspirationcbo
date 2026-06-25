@@ -1,41 +1,51 @@
 const VALUES = [
   {
-    icon: "🤝",
-    title: "Community First",
-    text: "We place the needs and voices of communities at the centre of everything we do.",
+    icon: "🏅",
+    title: "Integrity",
+    text: "We uphold the highest ethical standards in all our operations, maintaining honesty and moral principles in every interaction.",
+  },
+  {
+    icon: "✅",
+    title: "Accountability",
+    text: "We take full responsibility for our actions, decisions and use of resources — answering to our communities, partners and donors.",
   },
   {
     icon: "🔍",
     title: "Transparency",
-    text: "We operate with full accountability to our donors, partners, and beneficiaries.",
+    text: "We operate openly, sharing information about our programmes, finances and governance so stakeholders can hold us accountable.",
   },
   {
-    icon: "⚡",
-    title: "Empowerment",
-    text: "We build capacity so individuals and communities can drive their own development.",
+    icon: "🤝",
+    title: "Teamwork",
+    text: "We believe in the power of collaboration — working together across teams, communities and partner organisations to achieve shared goals.",
   },
   {
-    icon: "🌿",
-    title: "Sustainability",
-    text: "We design programmes that create lasting change long after our direct involvement ends.",
+    icon: "💡",
+    title: "Innovation",
+    text: "We embrace creative, evidence-based solutions to community challenges, constantly adapting our approach to meet evolving needs.",
   },
   {
     icon: "🤲",
-    title: "Inclusivity",
-    text: "We prioritise the most marginalised — women, youth, and persons with disabilities.",
+    title: "Inclusiveness",
+    text: "We welcome everyone regardless of gender, age, religion or background — because diversity and inclusion strengthen our collective impact.",
   },
   {
-    icon: "📊",
-    title: "Impact-Driven",
-    text: "Every initiative is measured against real, tangible outcomes for people we serve.",
+    icon: "⭐",
+    title: "Professionalism",
+    text: "We deliver our programmes and services with competence, dedication and respect — meeting the standards expected of international NGOs.",
+  },
+  {
+    icon: "🌍",
+    title: "Community Service",
+    text: "We are rooted in the communities we serve, placing their needs, voices and aspirations at the centre of everything we do.",
   },
 ];
 
 const APPROACH_STEPS = [
-  ["01", "Community Assessment", "We listen before we act — understanding real needs through structured community engagement."],
-  ["02", "Co-Design",            "Communities help design programmes so solutions are relevant and locally owned."],
-  ["03", "Implementation",       "Trained local facilitators deliver programmes with ongoing support and supervision."],
-  ["04", "Evaluation",           "We measure outcomes honestly and share results with all stakeholders."],
+  ["01", "Community Assessment", "We listen before we act — understanding real needs through structured community engagement and needs assessments."],
+  ["02", "Co-Design",            "Communities help design programmes so solutions are relevant, locally owned and culturally appropriate."],
+  ["03", "Implementation",       "Trained local facilitators deliver programmes with ongoing support, supervision and quality assurance."],
+  ["04", "Evaluation",           "We measure outcomes honestly and share results with all stakeholders to drive continuous improvement."],
 ];
 
 export function AboutPage() {
@@ -44,43 +54,43 @@ export function AboutPage() {
       <div className="page-hero">
         <h1 className="page-hero__title">About Dot Inspiration CBO</h1>
         <p className="page-hero__subtitle">
-          A registered Community Based Organisation serving Mukono District
-          and surrounding communities since 2026.
+          A registered non-profit, non-political and non-sectarian Community Based
+          Organisation serving Mukono District and surrounding communities since 2026.
         </p>
       </div>
 
-      {/* Mission & Vision */}
+      {/* Who We Are */}
       <section className="section">
         <div className="container">
           <span className="section-label">Who We Are</span>
           <h2 className="section-title">Our Story</h2>
           <p className="prose-text" style={{ maxWidth: 720 }}>
-            Dot Inspiration CBO was founded with a simple but powerful belief: that
-            every person, regardless of their background or circumstances, deserves
-            the opportunity to live a dignified, fulfilling life.
+            Dot Inspiration Community Based Organization (DOT INSPIRATION CBO) is a
+            non-profit, non-political and non-sectarian organisation established to
+            empower communities through sustainable development initiatives.
           </p>
           <p className="prose-text" style={{ maxWidth: 720, marginBottom: 0 }}>
-            We work in some of Uganda's most underserved communities, delivering
-            programmes in education, health, economic empowerment, and environmental
-            sustainability. Our approach is rooted in listening first — understanding
-            community needs before designing solutions.
+            The organisation focuses on youth empowerment, education support, health
+            promotion, environmental conservation, community mobilisation and economic
+            empowerment — inspiring positive change and creating opportunities that
+            improve the quality of life for vulnerable and underserved communities
+            across Mukono District, Uganda.
           </p>
 
           <div className="mission-vision">
             <div className="mv-card mv-card--mission">
-              <div className="mv-card__label">Our Mission</div>
+              <div className="mv-card__label">Our Vision</div>
               <p className="mv-card__text">
-                To inspire, empower, and transform communities through sustainable
-                development programmes that address education, health, economic
-                opportunity, and environmental stewardship.
+                To create empowered, informed, self-reliant and prosperous communities
+                through sustainable development initiatives.
               </p>
             </div>
             <div className="mv-card mv-card--vision">
-              <div className="mv-card__label">Our Vision</div>
+              <div className="mv-card__label">Our Mission</div>
               <p className="mv-card__text">
-                A Uganda where every individual has the knowledge, resources, and
-                opportunity to reach their full potential and contribute meaningfully
-                to their community.
+                To inspire and empower communities through education, skills development,
+                environmental conservation, health promotion, economic empowerment and
+                social support programmes.
               </p>
             </div>
           </div>
@@ -91,14 +101,15 @@ export function AboutPage() {
       <section className="section section--alt">
         <div className="container">
           <div className="text-center section-intro">
-            <span className="section-label">What Drives Us</span>
+            <span className="section-label">What Guides Us</span>
             <h2 className="section-title">Our Core Values</h2>
             <p className="section-subtitle">
-              These principles guide every decision, programme, and partnership
-              we enter into.
+              These eight principles are not just words — they are the foundation on
+              which Dot Inspiration CBO is built. They guide how we serve, lead, and
+              grow every single day.
             </p>
           </div>
-          <div className="values-grid">
+          <div className="values-grid" style={{ gridTemplateColumns: "repeat(4, 1fr)" }}>
             {VALUES.map((v) => (
               <div key={v.title} className="value-card">
                 <div className="value-card__icon">{v.icon}</div>
@@ -126,7 +137,7 @@ export function AboutPage() {
               <p className="prose-text">
                 We partner with local leaders, schools, health facilities, and
                 government agencies to amplify our reach and ensure our programmes
-                align with national development goals.
+                align with national development goals across Mukono District.
               </p>
             </div>
             <div className="step-list">

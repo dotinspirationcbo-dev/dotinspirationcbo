@@ -1,47 +1,47 @@
 import { Link } from "react-router-dom";
 
 const TRUST_SIGNALS = [
-  "Registered Community Based Organisation",
+  "Non-Profit Organisation",
+  "Non-Political · Non-Sectarian",
   "Serving Mukono District since 2026",
-  "Transparent Operations",
   "Community-Led Programmes",
 ];
 
 const STATS = [
-  { number: "1,200+", label: "Beneficiaries Reached" },
-  { number: "4",      label: "Active Programs" },
-  { number: "5",      label: "Districts Covered" },
-  { number: "8+",     label: "Years of Service" },
+  { number: "12,000+", label: "Community Members Reached" },
+  { number: "3,500+",  label: "Youth Trained" },
+  { number: "25+",     label: "Community Projects Delivered" },
+  { number: "15",      label: "Villages Covered" },
 ];
 
 const PROGRAMS_PREVIEW = [
   {
+    icon: "🌟",
+    title: "Youth Empowerment",
+    for: "Young people aged 12–25",
+    impact: "3,500+ youth trained in skills & leadership",
+    desc: "Comprehensive mentoring, leadership workshops, and life skills training for young people. Our youth cohorts graduate with confidence, direction, and a professional network.",
+  },
+  {
     icon: "📚",
-    title: "Education & Literacy",
-    for: "Children, youth & adult learners",
-    impact: "400+ learners reached per year",
-    desc: "Breaking cycles of poverty by expanding access to quality education, literacy, and mentorship for Uganda's most underserved learners.",
+    title: "Education Support",
+    for: "Children, students & adult learners",
+    impact: "Free tutoring, supplies & scholarships",
+    desc: "Removing barriers to quality education through free tutoring, school supply distribution, scholarship facilitation, and teacher training partnerships.",
   },
   {
     icon: "🏥",
-    title: "Community Health",
-    for: "Families & community members",
-    impact: "500+ people reached per outreach",
-    desc: "Bridging critical gaps in healthcare through community outreaches, maternal health support, and training local health champions.",
+    title: "Community Outreach",
+    for: "Vulnerable families & elderly members",
+    impact: "Health, food security & social support",
+    desc: "Holistic welfare programmes addressing health, food security, and social support for vulnerable families and elderly community members across Mukono District.",
   },
   {
     icon: "💡",
-    title: "Economic Empowerment",
-    for: "Women, youth & small entrepreneurs",
-    impact: "150+ women economically empowered",
-    desc: "Equipping individuals with the skills, savings groups, and business networks to build sustainable, self-reliant livelihoods.",
-  },
-  {
-    icon: "🌱",
-    title: "Environmental Sustainability",
-    for: "Farming communities & future generations",
-    impact: "5,000+ trees planted to date",
-    desc: "Protecting ecosystems and climate resilience through reforestation, clean energy promotion, and sustainable agriculture training.",
+    title: "Economic Development",
+    for: "Youth, women & small entrepreneurs",
+    impact: "Entrepreneurship, microfinance & job placement",
+    desc: "Building economic resilience through entrepreneurship training, microfinance linkages, job placement partnerships, and small business incubation.",
   },
 ];
 
@@ -51,22 +51,22 @@ export function HomePage() {
       {/* ── Hero ── */}
       <section className="hero">
         <div className="hero__inner">
-          <div className="hero__badge">Registered CBO · Mukono District, Uganda</div>
+          <div className="hero__badge">Registered Community Based Organization</div>
           <h1 className="hero__title">
-            Inspiring Communities,<br />
-            <em>Transforming Lives</em>
+            Empowering Communities,<br />
+            <em>for Sustainable Development</em>
           </h1>
           <p className="hero__subtitle">
-            Since 2026, we have been walking alongside the most vulnerable families
-            in Mukono District and beyond — building futures through education, health,
-            economic opportunity, and environmental action.
+            Dot Inspiration Community Based Organization (DOT INSPIRATION CBO) is a
+            registered non-profit serving Mukono District, Uganda — transforming lives
+            through education, youth empowerment, and community-driven development.
           </p>
           <div className="hero__ctas">
-            <Link to="/public/support" className="btn btn-primary">
-              ❤️ Donate Now
+            <Link to="/public/contact" className="btn btn-primary">
+              Join Our Community
             </Link>
-            <Link to="/public/contact" className="btn btn-secondary">
-              Volunteer With Us
+            <Link to="/public/programs" className="btn btn-secondary">
+              Explore Our Programs
             </Link>
           </div>
           <div className="trust-strip">
@@ -94,10 +94,10 @@ export function HomePage() {
         <div className="container">
           <div className="text-center section-intro">
             <span className="section-label">What We Do</span>
-            <h2 className="section-title">Our Four Program Areas</h2>
+            <h2 className="section-title">Our Programs & Projects</h2>
             <p className="section-subtitle">
-              Every programme is community-designed, locally delivered, and measured
-              for real impact in Mukono District and surrounding communities.
+              All programmes are community-led, evidence-based, and designed for
+              lasting impact in Mukono District and surrounding areas.
             </p>
           </div>
           <div className="programs-grid">
@@ -122,28 +122,28 @@ export function HomePage() {
         <div className="container">
           <div className="text-center section-intro">
             <span className="section-label">Our Impact Since 2026</span>
-            <h2 className="section-title">Real People. Real Change.</h2>
+            <h2 className="section-title">Evidence of Our Work</h2>
             <p className="section-subtitle">
-              Eight years of community-led programmes delivering measurable,
-              lasting outcomes for the people who need it most.
+              Behind every number is a community member whose life has been touched
+              by Dot Inspiration CBO across Mukono District and surrounding areas.
             </p>
           </div>
           <div className="impact-grid">
             <div className="impact-card">
-              <div className="impact-card__number">1,200+</div>
-              <div className="impact-card__label">Individuals directly supported</div>
+              <div className="impact-card__number">12,000+</div>
+              <div className="impact-card__label">Community Members Reached</div>
             </div>
             <div className="impact-card">
-              <div className="impact-card__number">200+</div>
-              <div className="impact-card__label">Children supported in education</div>
+              <div className="impact-card__number">3,500+</div>
+              <div className="impact-card__label">Youth Trained in skills & leadership</div>
             </div>
             <div className="impact-card">
-              <div className="impact-card__number">150+</div>
-              <div className="impact-card__label">Women economically empowered</div>
+              <div className="impact-card__number">25+</div>
+              <div className="impact-card__label">Community Projects Delivered</div>
             </div>
             <div className="impact-card">
-              <div className="impact-card__number">5,000+</div>
-              <div className="impact-card__label">Trees planted across the region</div>
+              <div className="impact-card__number">15</div>
+              <div className="impact-card__label">Villages Covered</div>
             </div>
           </div>
         </div>
@@ -153,20 +153,21 @@ export function HomePage() {
       <section className="section">
         <div className="container text-center">
           <span className="section-label">Get Involved</span>
-          <h2 className="section-title">Your Support Changes Lives</h2>
+          <h2 className="section-title">Join Us in Transforming Communities</h2>
           <p className="section-subtitle">
-            A donation funds a child's education. Volunteering transforms a community.
-            A partnership scales our reach. Every form of support matters.
+            Be part of the change. Whether you join as a member, volunteer, or
+            strategic partner — your involvement drives lasting impact across
+            Mukono District and beyond.
           </p>
           <div className="cta-group">
-            <Link to="/public/support" className="btn btn-primary">
-              ❤️ Donate Now
+            <Link to="/public/contact" className="btn btn-primary">
+              Become a Member
             </Link>
             <Link to="/public/contact" className="btn btn-outline-green">
               Volunteer With Us
             </Link>
-            <Link to="/public/contact" className="btn btn-outline-green">
-              Become a Partner
+            <Link to="/public/support" className="btn btn-outline-green">
+              Donate Now
             </Link>
           </div>
         </div>

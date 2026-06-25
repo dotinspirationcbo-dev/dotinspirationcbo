@@ -32,17 +32,16 @@ const BANK_ROWS = [
 ];
 
 const DONATION_IMPACT = [
-  ["UGX 30,000",  "School exercise books and stationery for one child"],
-  ["UGX 50,000",  "A month of adult literacy classes for one learner"],
-  ["UGX 100,000", "A community health screening reaching 20+ families"],
-  ["UGX 200,000", "Vocational skills training for one young woman"],
-  ["UGX 500,000", "50 trees planted in a degraded watershed area"],
+  ["$10",  "Provides school supplies for one student"],
+  ["$25",  "Sponsors one youth for a leadership workshop"],
+  ["$50",  "Covers transport for a community outreach day"],
+  ["$100", "Funds an entire after-school tutoring session"],
 ];
 
 const WAYS_TO_HELP = [
-  ["🙋", "Volunteer With Us",  "Join us on the ground in Mukono District. We need health workers, educators, trainers, and many other skilled volunteers."],
+  ["🙋", "Volunteer With Us",  "Share your skills and time with communities that need you most. We welcome volunteers in education, health, community work, administration, and digital skills."],
   ["📢", "Spread the Word",    "Share our work with your network. Awareness reaches new donors, partners, and volunteers we would never find alone."],
-  ["🤝", "Become a Partner",   "NGOs, government bodies, and businesses can partner with us to co-fund or co-deliver programmes at greater scale."],
+  ["🤝", "Become a Partner",   "Strategic partnerships with NGOs, government bodies, schools, and businesses that multiply community impact across Mukono District."],
 ];
 
 export function SupportPage() {
@@ -51,8 +50,9 @@ export function SupportPage() {
       <div className="page-hero">
         <h1 className="page-hero__title">Support Our Work</h1>
         <p className="page-hero__subtitle">
-          Since 2026, communities in Mukono District have counted on our programmes.
-          Your generosity — however large or small — keeps that work going.
+          Your donation funds education programmes, youth workshops, community outreach,
+          and the operational costs that keep Dot Inspiration CBO running. Every
+          contribution — big or small — creates lasting impact.
         </p>
       </div>
 

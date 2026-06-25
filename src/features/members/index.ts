@@ -17,3 +17,4 @@ export { useCreateMember } from "./useCreateMember";
 export { useUpdateMember } from "./useUpdateMember";
 export { MembersPage } from "./MembersPage";
 export { CreateMemberForm } from "./CreateMemberForm";
+export { MemberRowEditor } from "./MemberRowEditor";

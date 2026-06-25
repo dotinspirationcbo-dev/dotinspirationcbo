@@ -1,0 +1,96 @@
+DO NOT make any code changes or add new features.
+
+We are preparing this project for transfer to a new Replit account due to low credits.
+
+TASKS:
+
+1. Create PROJECT_HANDOVER.md in the root directory.
+
+It must include:
+
+## 1. Project Overview
+
+* Dot Inspiration CBO NGO website
+* Purpose: public NGO website + admin system
+
+## 2. Current Production Status
+
+* Public website: fully complete and polished
+* Admin system: Members CRUD fully implemented (Create, Read, Update)
+* Donations: NOT yet implemented (only UI/support page exists)
+* RBAC: fully implemented and working
+* React Query: integrated and stable
+
+## 3. Architecture Summary
+
+* Frontend: React
+* Routing: React Router (public + admin separation)
+* State: React Query
+* Auth: Clerk-based (role mapped via mapClerkRole)
+* Domain structure:
+
+  * members/
+  * permissions/
+  * auth/
+  * services/
+  * types/
+
+## 4. Completed Features
+
+* Full NGO public website (Home, About, Programs, Leadership, Contact, Support)
+* Members admin system (create, update, list)
+* Role-based access control system
+* Design system + public.css
+* Consistent UI/UX polish
+* Mobile responsiveness improvements
+
+## 5. Partially Completed / Future Work
+
+* Donations system (NOT built yet)
+* Admin dashboard homepage
+* Leadership CMS management
+* Programs CMS management
+* Impact metrics admin editing
+* Mobile navigation hamburger menu
+
+## 6. Key Files
+
+List and explain:
+
+* src/types/member.types.ts
+* src/services/members.service.ts
+* src/app/permissions/
+* src/features/members/
+* src/components/ProtectedRoute.tsx
+* src/pages (public pages)
+
+## 7. How to Continue in a New Replit Account
+
+Step-by-step:
+
+1. Import project from GitHub or download source
+2. Ensure dependencies installed
+3. Run dev server
+4. Verify /public routes
+5. Verify /admin routes
+6. Confirm Clerk authentication works
+7. Continue from:
+
+   * Donations module OR
+   * Admin dashboard OR
+   * Mobile navigation improvement
+
+## 8. Critical Notes
+
+* DO NOT change architecture when continuing
+* DO NOT duplicate types or services
+* Keep MemberRole as single source of truth
+* Keep React Query pattern consistent
+
+8. Run a final TypeScript check to ensure zero errors.
+
+IMPORTANT:
+
+* Do not modify application logic
+* Do not refactor code
+* Only generate documentation file

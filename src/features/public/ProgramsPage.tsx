@@ -1,3 +1,5 @@
+import { siteContent } from "./content/siteContent";
+
 const PROGRAMS = [
   {
     icon: "🌟",
@@ -6,7 +8,7 @@ const PROGRAMS = [
     title: "Youth Empowerment",
     beneficiaries: "Young people aged 12–25 from Mukono District and surrounding areas.",
     impact: "Graduates leave with confidence, direction, and a professional network to drive their own futures.",
-    desc: "Comprehensive mentoring, leadership workshops, and life skills training for young people aged 12–25. Our youth cohorts graduate with confidence, direction, and a professional network. We believe in young people as agents of change — not just beneficiaries.",
+    desc: siteContent.programs.youthEmpowerment,
     activities: [
       "Monthly leadership workshops",
       "1-on-1 mentorship matching",
@@ -23,7 +25,7 @@ const PROGRAMS = [
     title: "Education Support",
     beneficiaries: "Out-of-school children, students from low-income families, and adult learners in Mukono District.",
     impact: "Improved literacy rates, increased school retention, greater youth confidence and career readiness.",
-    desc: "Removing barriers to quality education through free tutoring, school supply distribution, scholarship facilitation, and teacher training partnerships. Education is the foundation of every life and the key to breaking cycles of poverty.",
+    desc: siteContent.programs.education,
     activities: [
       "Free after-school tutoring",
       "School supplies distribution",
@@ -40,7 +42,7 @@ const PROGRAMS = [
     title: "Community Outreach",
     beneficiaries: "Vulnerable families, elderly community members, and women across Nantabulirwa and Goma Division.",
     impact: "Improved household wellbeing, food security, maternal health outcomes, and stronger community social networks.",
-    desc: "Holistic welfare programmes addressing health, food security, and social support for vulnerable families and elderly community members. Good health and social dignity are rights — not privileges — for every community member.",
+    desc: siteContent.programs.communityOutreach,
     activities: [
       "Health awareness campaigns",
       "Food drive distributions",
@@ -57,7 +59,7 @@ const PROGRAMS = [
     title: "Economic Development",
     beneficiaries: "Youth, women, and small-scale entrepreneurs lacking access to formal economic opportunities in Mukono District.",
     impact: "Increased household income, new businesses launched, stronger savings culture, and greater financial independence.",
-    desc: "Building economic resilience through entrepreneurship training, microfinance linkages, job placement partnerships, and small business incubation. We help people move from dependency to self-reliance through practical skills and market connections.",
+    desc: siteContent.programs.economicDevelopment,
     activities: [
       "Entrepreneurship bootcamps",
       "Microfinance referral network",

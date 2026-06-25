@@ -1,3 +1,5 @@
+import { siteContent } from "./content/siteContent";
+
 const VALUES = [
   {
     icon: "🏅",
@@ -65,33 +67,20 @@ export function AboutPage() {
           <span className="section-label">Who We Are</span>
           <h2 className="section-title">Our Story</h2>
           <p className="prose-text" style={{ maxWidth: 720 }}>
-            Dot Inspiration Community Based Organization (DOT INSPIRATION CBO) is a
-            non-profit, non-political and non-sectarian organisation established to
-            empower communities through sustainable development initiatives.
+            {siteContent.about.description}
           </p>
           <p className="prose-text" style={{ maxWidth: 720, marginBottom: 0 }}>
-            The organisation focuses on youth empowerment, education support, health
-            promotion, environmental conservation, community mobilisation and economic
-            empowerment — inspiring positive change and creating opportunities that
-            improve the quality of life for vulnerable and underserved communities
-            across Mukono District, Uganda.
+            {siteContent.about.extended}
           </p>
 
           <div className="mission-vision">
             <div className="mv-card mv-card--mission">
               <div className="mv-card__label">Our Vision</div>
-              <p className="mv-card__text">
-                To create empowered, informed, self-reliant and prosperous communities
-                through sustainable development initiatives.
-              </p>
+              <p className="mv-card__text">{siteContent.about.vision}</p>
             </div>
             <div className="mv-card mv-card--vision">
               <div className="mv-card__label">Our Mission</div>
-              <p className="mv-card__text">
-                To inspire and empower communities through education, skills development,
-                environmental conservation, health promotion, economic empowerment and
-                social support programmes.
-              </p>
+              <p className="mv-card__text">{siteContent.about.mission}</p>
             </div>
           </div>
         </div>

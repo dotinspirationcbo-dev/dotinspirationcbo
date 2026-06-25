@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { siteContent } from "./content/siteContent";
 
 const TRUST_SIGNALS = [
   "Non-Profit Organisation",
@@ -52,15 +53,8 @@ export function HomePage() {
       <section className="hero">
         <div className="hero__inner">
           <div className="hero__badge">Registered Community Based Organization</div>
-          <h1 className="hero__title">
-            Empowering Communities,<br />
-            <em>for Sustainable Development</em>
-          </h1>
-          <p className="hero__subtitle">
-            Dot Inspiration Community Based Organization (DOT INSPIRATION CBO) is a
-            registered non-profit serving Mukono District, Uganda — transforming lives
-            through education, youth empowerment, and community-driven development.
-          </p>
+          <h1 className="hero__title">{siteContent.hero.title}</h1>
+          <p className="hero__subtitle">{siteContent.hero.subtitle}</p>
           <div className="hero__ctas">
             <Link to="/public/contact" className="btn btn-primary">
               Join Our Community

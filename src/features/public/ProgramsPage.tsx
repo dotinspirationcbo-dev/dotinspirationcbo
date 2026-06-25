@@ -74,28 +74,20 @@ function ProgramTextBlock({ p }: { p: typeof PROGRAMS[0] }) {
     <div>
       <span className="section-label">{p.tag}</span>
       <h2 className="section-title">{p.title}</h2>
-      <p style={{ color: "var(--muted)", lineHeight: 1.8, marginBottom: 20, fontSize: "0.95rem" }}>
-        {p.desc}
-      </p>
+      <p className="prose-text" style={{ marginBottom: 20 }}>{p.desc}</p>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: 12, marginBottom: 20 }}>
-        <div style={{ fontSize: "0.85rem" }}>
-          <span style={{ fontWeight: 700, color: "var(--green-900)" }}>Who benefits: </span>
-          <span style={{ color: "var(--muted)" }}>{p.beneficiaries}</span>
+      <div className="program-detail-meta">
+        <div className="program-detail-meta__row">
+          <span className="program-detail-meta__key">Who benefits: </span>
+          <span className="program-detail-meta__val">{p.beneficiaries}</span>
         </div>
-        <div style={{ fontSize: "0.85rem" }}>
-          <span style={{ fontWeight: 700, color: "var(--green-900)" }}>Impact: </span>
-          <span style={{ color: "var(--muted)" }}>{p.impact}</span>
+        <div className="program-detail-meta__row">
+          <span className="program-detail-meta__key">Impact: </span>
+          <span className="program-detail-meta__val">{p.impact}</span>
         </div>
       </div>
 
-      <div style={{
-        display: "inline-flex", alignItems: "center", gap: 8,
-        background: "var(--green-50)", borderRadius: 8, padding: "8px 16px",
-        fontSize: "0.85rem", fontWeight: 600, color: "var(--green-700)",
-      }}>
-        📍 Reach: {p.reach}
-      </div>
+      <div className="reach-badge">📍 Reach: {p.reach}</div>
     </div>
   );
 }
@@ -125,20 +117,13 @@ export function ProgramsPage() {
             >
               {i % 2 !== 0 && <ProgramTextBlock p={p} />}
 
-              <div style={{
-                background: p.color,
-                borderRadius: 16,
-                padding: "36px 32px",
-                border: "1px solid rgba(0,0,0,.06)",
-              }}>
-                <div style={{ fontSize: "2.5rem", marginBottom: 16 }}>{p.icon}</div>
-                <h3 style={{ fontWeight: 700, marginBottom: 20, color: "var(--green-900)" }}>
-                  Key Activities
-                </h3>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
+              <div className="program-highlight" style={{ background: p.color }}>
+                <div className="program-highlight__icon">{p.icon}</div>
+                <h3 className="program-highlight__heading">Key Activities</h3>
+                <ul className="program-highlight__list">
                   {p.activities.map((a) => (
-                    <li key={a} style={{ display: "flex", gap: 10, alignItems: "flex-start", fontSize: "0.88rem", color: "var(--text)" }}>
-                      <span style={{ color: "var(--green-700)", fontWeight: 700, flexShrink: 0 }}>✓</span>
+                    <li key={a} className="program-highlight__item">
+                      <span className="program-highlight__check">✓</span>
                       {a}
                     </li>
                   ))}
@@ -160,9 +145,11 @@ export function ProgramsPage() {
             We welcome partnerships with donors, NGOs, government bodies, and
             corporate organisations committed to lasting community development.
           </p>
-          <a href="mailto:info@dotinspirationcbo.org" className="btn btn-primary" style={{ marginTop: 32 }}>
-            Contact Us to Partner →
-          </a>
+          <div className="cta-group">
+            <a href="mailto:info@dotinspirationcbo.org" className="btn btn-primary">
+              Contact Us to Partner →
+            </a>
+          </div>
         </div>
       </section>
     </>

@@ -23,6 +23,28 @@ const TRUST_BAR = [
   },
 ];
 
+const BANK_ROWS = [
+  ["Bank",           "Exim Bank Uganda"],
+  ["Account Name",   "Othieno Constant"],
+  ["Account Number", "0071013100"],
+  ["Currency",       "UGX (Ugandan Shillings)"],
+  ["Reference",      "Donation — [Your Name]"],
+];
+
+const DONATION_IMPACT = [
+  ["UGX 30,000",  "School exercise books and stationery for one child"],
+  ["UGX 50,000",  "A month of adult literacy classes for one learner"],
+  ["UGX 100,000", "A community health screening reaching 20+ families"],
+  ["UGX 200,000", "Vocational skills training for one young woman"],
+  ["UGX 500,000", "50 trees planted in a degraded watershed area"],
+];
+
+const WAYS_TO_HELP = [
+  ["🙋", "Volunteer With Us",  "Join us on the ground in Mukono District. We need health workers, educators, trainers, and many other skilled volunteers."],
+  ["📢", "Spread the Word",    "Share our work with your network. Awareness reaches new donors, partners, and volunteers we would never find alone."],
+  ["🤝", "Become a Partner",   "NGOs, government bodies, and businesses can partner with us to co-fund or co-deliver programmes at greater scale."],
+];
+
 export function SupportPage() {
   return (
     <>
@@ -60,18 +82,10 @@ export function SupportPage() {
           <div className="support-grid">
             {/* Bank Details */}
             <div>
-              <h3 style={{ fontWeight: 700, marginBottom: 20, fontSize: "1.1rem" }}>
-                🏦 Bank Transfer
-              </h3>
+              <h3 className="section-subheading">🏦 Bank Transfer</h3>
               <div className="bank-details">
                 <div className="bank-details__header">Official Banking Details — Dot Inspiration CBO</div>
-                {[
-                  ["Bank",           "Exim Bank Uganda"],
-                  ["Account Name",   "Othieno Constant"],
-                  ["Account Number", "0071013100"],
-                  ["Currency",       "UGX (Ugandan Shillings)"],
-                  ["Reference",      "Donation — [Your Name]"],
-                ].map(([key, val]) => (
+                {BANK_ROWS.map(([key, val]) => (
                   <div key={key} className="bank-details__row">
                     <span className="bank-details__key">{key}</span>
                     <span className="bank-details__val">{val}</span>
@@ -85,17 +99,15 @@ export function SupportPage() {
                 </div>
               </div>
 
-              <h3 style={{ fontWeight: 700, margin: "32px 0 16px", fontSize: "1.1rem" }}>
-                📱 Mobile Money
-              </h3>
-              <div className="contact-item" style={{ marginBottom: 12 }}>
+              <h3 className="section-subheading" style={{ marginTop: 32 }}>📱 Mobile Money</h3>
+              <div className="contact-item">
                 <div className="contact-item__icon">📞</div>
                 <div>
                   <div className="contact-item__label">Mobile Money / WhatsApp</div>
                   <div className="contact-item__value">
                     <a href="tel:+256794722080">+256 794 722 080</a>
                   </div>
-                  <div style={{ fontSize: "0.8rem", color: "var(--muted)", marginTop: 4 }}>
+                  <div className="prose-text" style={{ fontSize: "0.8rem", marginTop: 4 }}>
                     Send us a WhatsApp message to arrange your mobile money donation.
                   </div>
                 </div>
@@ -104,9 +116,7 @@ export function SupportPage() {
 
             {/* Right column */}
             <div>
-              <h3 style={{ fontWeight: 700, marginBottom: 20, fontSize: "1.1rem" }}>
-                📬 Donation Enquiries
-              </h3>
+              <h3 className="section-subheading">📬 Donation Enquiries</h3>
               <div className="contact-box">
                 <div className="contact-item">
                   <div className="contact-item__icon">📧</div>
@@ -131,34 +141,15 @@ export function SupportPage() {
               </div>
 
               {/* What your donation funds */}
-              <div style={{
-                background: "var(--green-50)", border: "1px solid var(--green-100)",
-                borderRadius: 12, padding: 28, marginTop: 24,
-              }}>
-                <h4 style={{ fontWeight: 700, marginBottom: 6, color: "var(--green-900)" }}>
-                  What your donation funds
-                </h4>
-                <p style={{ fontSize: "0.8rem", color: "var(--muted)", marginBottom: 16, lineHeight: 1.5 }}>
+              <div className="donation-impact">
+                <h4 className="donation-impact__title">What your donation funds</h4>
+                <p className="donation-impact__subtitle">
                   Every contribution, whatever the amount, goes directly to our programmes.
                 </p>
-                <ul style={{ listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
-                  {[
-                    ["UGX 30,000",  "School exercise books and stationery for one child"],
-                    ["UGX 50,000",  "A month of adult literacy classes for one learner"],
-                    ["UGX 100,000", "A community health screening reaching 20+ families"],
-                    ["UGX 200,000", "Vocational skills training for one young woman"],
-                    ["UGX 500,000", "50 trees planted in a degraded watershed area"],
-                  ].map(([amount, desc]) => (
-                    <li key={amount} style={{
-                      display: "flex", gap: 10, alignItems: "flex-start",
-                      fontSize: "0.86rem", color: "var(--text)", lineHeight: 1.5,
-                    }}>
-                      <span style={{
-                        background: "var(--green-700)", color: "white",
-                        borderRadius: 4, padding: "1px 7px", fontSize: "0.72rem",
-                        fontWeight: 700, flexShrink: 0, marginTop: 2,
-                        whiteSpace: "nowrap",
-                      }}>{amount}</span>
+                <ul className="donation-impact__list">
+                  {DONATION_IMPACT.map(([amount, desc]) => (
+                    <li key={amount} className="donation-impact__item">
+                      <span className="donation-impact__amount">{amount}</span>
                       {desc}
                     </li>
                   ))}
@@ -181,22 +172,15 @@ export function SupportPage() {
             </p>
           </div>
           <div className="ways-grid">
-            {[
-              ["🙋", "Volunteer With Us",  "Join us on the ground in Mukono District. We need health workers, educators, trainers, and many other skilled volunteers."],
-              ["📢", "Spread the Word", "Share our work with your network. Awareness reaches new donors, partners, and volunteers we would never find alone."],
-              ["🤝", "Become a Partner",    "NGOs, government bodies, and businesses can partner with us to co-fund or co-deliver programmes at greater scale."],
-            ].map(([icon, title, text]) => (
-              <div key={String(title)} style={{
-                background: "var(--white)", border: "1px solid var(--border)",
-                borderRadius: 12, padding: "28px 24px", textAlign: "center",
-              }}>
-                <div style={{ fontSize: "2rem", marginBottom: 14 }}>{icon}</div>
-                <div style={{ fontWeight: 700, marginBottom: 10 }}>{title}</div>
-                <p style={{ fontSize: "0.88rem", color: "var(--muted)", lineHeight: 1.65 }}>{text}</p>
+            {WAYS_TO_HELP.map(([icon, title, text]) => (
+              <div key={String(title)} className="ways-card">
+                <div className="ways-card__icon">{icon}</div>
+                <div className="ways-card__title">{title}</div>
+                <p className="ways-card__text">{text}</p>
               </div>
             ))}
           </div>
-          <div style={{ textAlign: "center", marginTop: 32 }}>
+          <div className="cta-group">
             <Link to="/public/contact" className="btn btn-outline-green">
               Contact Us to Get Involved →
             </Link>

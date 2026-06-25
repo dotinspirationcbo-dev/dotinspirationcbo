@@ -714,6 +714,150 @@ a   { color: inherit; text-decoration: none; }
 .trust-bar__title { font-size: 0.84rem; font-weight: 700; color: var(--green-900); margin-bottom: 5px; }
 .trust-bar__text  { font-size: 0.76rem; color: var(--muted); line-height: 1.45; }
 
+/* ── Prose text ──────────────────────────────────────────── */
+.prose-text {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+.prose-text + .prose-text { margin-top: 16px; }
+
+/* ── Step item (approach, process lists) ─────────────────── */
+.step-list { display: flex; flex-direction: column; gap: 16px; }
+.step-item { display: flex; gap: 16px; align-items: flex-start; }
+.step-item__num {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--green-700);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+.step-item__title { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
+.step-item__text  { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+/* ── Info card (governance, feature lists) ───────────────── */
+.info-card-list { display: flex; flex-direction: column; gap: 16px; }
+.info-card {
+  display: flex;
+  gap: 16px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 22px;
+}
+.info-card__icon  { font-size: 1.4rem; flex-shrink: 0; }
+.info-card__title { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
+.info-card__text  { font-size: 0.84rem; color: var(--muted); }
+
+/* ── Reach badge (programs page) ─────────────────────────── */
+.reach-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-50);
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--green-700);
+}
+
+/* ── Program detail meta ─────────────────────────────────── */
+.program-detail-meta { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+.program-detail-meta__row { font-size: 0.85rem; }
+.program-detail-meta__key { font-weight: 700; color: var(--green-900); }
+.program-detail-meta__val { color: var(--muted); }
+
+/* ── Program activity card (colored highlight box) ───────── */
+.program-highlight {
+  border-radius: 16px;
+  padding: 36px 32px;
+  border: 1px solid rgba(0,0,0,.06);
+}
+.program-highlight__icon    { font-size: 2.5rem; margin-bottom: 16px; }
+.program-highlight__heading { font-weight: 700; margin-bottom: 20px; color: var(--green-900); }
+.program-highlight__list    { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.program-highlight__item {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+.program-highlight__check { color: var(--green-700); font-weight: 700; flex-shrink: 0; }
+
+/* ── Ways card (support page) ────────────────────────────── */
+.ways-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: center;
+}
+.ways-card__icon  { font-size: 2rem; margin-bottom: 14px; }
+.ways-card__title { font-weight: 700; margin-bottom: 10px; }
+.ways-card__text  { font-size: 0.88rem; color: var(--muted); line-height: 1.65; }
+
+/* ── Donation impact list ────────────────────────────────── */
+.donation-impact {
+  background: var(--green-50);
+  border: 1px solid var(--green-100);
+  border-radius: 12px;
+  padding: 28px;
+  margin-top: 24px;
+}
+.donation-impact__title    { font-weight: 700; margin-bottom: 6px; color: var(--green-900); }
+.donation-impact__subtitle { font-size: 0.8rem; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+.donation-impact__list     { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.donation-impact__item     { display: flex; gap: 10px; align-items: flex-start; font-size: 0.86rem; color: var(--text); line-height: 1.5; }
+.donation-impact__amount   {
+  background: var(--green-700);
+  color: var(--white);
+  border-radius: 4px;
+  padding: 1px 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+
+/* ── Contact purpose card ────────────────────────────────── */
+.contact-purpose-card {
+  background: var(--gray-50);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 22px 24px;
+}
+.contact-purpose-card__icon  { font-size: 1.4rem; margin-bottom: 8px; }
+.contact-purpose-card__title { font-weight: 700; font-size: 0.95rem; margin-bottom: 6px; }
+.contact-purpose-card__text  { font-size: 0.85rem; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+.contact-purpose-card__link  { font-size: 0.82rem; font-weight: 700; color: var(--green-700); }
+.contact-purpose-card__link:hover { text-decoration: underline; }
+
+/* ── CTA group ───────────────────────────────────────────── */
+.cta-group {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 32px;
+}
+
+/* ── Section head sub-heading (h3 in support/donation) ───── */
+.section-subheading {
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+}
+.section-subheading + * { /* next sibling spacing already set per component */ }
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 900px) {
   .programs-grid       { grid-template-columns: 1fr; }

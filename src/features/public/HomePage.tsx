@@ -158,7 +158,7 @@ export function HomePage() {
             A donation funds a child's education. Volunteering transforms a community.
             A partnership scales our reach. Every form of support matters.
           </p>
-          <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginTop: 32 }}>
+          <div className="cta-group">
             <Link to="/public/support" className="btn btn-primary">
               ❤️ Donate Now
             </Link>

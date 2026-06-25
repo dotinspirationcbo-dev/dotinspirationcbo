@@ -37,6 +37,13 @@ const TEAM = [
   },
 ];
 
+const GOVERNANCE_CARDS = [
+  ["📋", "Registered CBO",       "Legally registered Community Based Organisation under Ugandan law."],
+  ["🔍", "Independent Oversight", "Annual financial statements independently reviewed by qualified auditors."],
+  ["📊", "Donor Reporting",       "Quarterly programme reports shared with all funders and partners."],
+  ["🤝", "Community Governance",  "Beneficiary representatives actively participate in programme decisions."],
+];
+
 export function LeadershipPage() {
   return (
     <>
@@ -79,34 +86,25 @@ export function LeadershipPage() {
             <div>
               <span className="section-label">Governance</span>
               <h2 className="section-title">How We Are Governed</h2>
-              <p style={{ color: "var(--muted)", lineHeight: 1.8, marginBottom: 16, fontSize: "0.95rem" }}>
+              <p className="prose-text">
                 Dot Inspiration CBO has operated in Mukono District since 2026,
                 registered under Ugandan law and governed by an independent Board
                 of Directors. The Board provides strategic oversight, fiduciary
                 accountability, and ensures the organisation remains true to its mission.
               </p>
-              <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.95rem" }}>
+              <p className="prose-text">
                 We are committed to full transparency. Financial reports are prepared
                 annually and are available to all donors and partners on request.
                 We report quarterly to funders on programme progress and outcomes.
               </p>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {[
-                ["📋", "Registered CBO",       "Legally registered Community Based Organisation under Ugandan law."],
-                ["🔍", "Independent Oversight", "Annual financial statements independently reviewed by qualified auditors."],
-                ["📊", "Donor Reporting",       "Quarterly programme reports shared with all funders and partners."],
-                ["🤝", "Community Governance",  "Beneficiary representatives actively participate in programme decisions."],
-              ].map(([icon, title, text]) => (
-                <div key={String(title)} style={{
-                  display: "flex", gap: 16,
-                  background: "var(--white)", border: "1px solid var(--border)",
-                  borderRadius: 10, padding: "18px 22px",
-                }}>
-                  <span style={{ fontSize: "1.4rem", flexShrink: 0 }}>{icon}</span>
+            <div className="info-card-list">
+              {GOVERNANCE_CARDS.map(([icon, title, text]) => (
+                <div key={String(title)} className="info-card">
+                  <span className="info-card__icon">{icon}</span>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: "0.9rem", marginBottom: 4 }}>{title}</div>
-                    <div style={{ fontSize: "0.84rem", color: "var(--muted)" }}>{text}</div>
+                    <div className="info-card__title">{title}</div>
+                    <div className="info-card__text">{text}</div>
                   </div>
                 </div>
               ))}
@@ -125,13 +123,11 @@ export function LeadershipPage() {
             make a tangible difference. Whether as a volunteer, intern, or
             long-term team member — there is a place for you here.
           </p>
-          <a
-            href="mailto:info@dotinspirationcbo.org"
-            className="btn btn-primary"
-            style={{ marginTop: 32 }}
-          >
-            Get In Touch →
-          </a>
+          <div className="cta-group">
+            <a href="mailto:info@dotinspirationcbo.org" className="btn btn-primary">
+              Get In Touch →
+            </a>
+          </div>
         </div>
       </section>
     </>

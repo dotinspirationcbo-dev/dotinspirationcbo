@@ -31,6 +31,13 @@ const VALUES = [
   },
 ];
 
+const APPROACH_STEPS = [
+  ["01", "Community Assessment", "We listen before we act — understanding real needs through structured community engagement."],
+  ["02", "Co-Design",            "Communities help design programmes so solutions are relevant and locally owned."],
+  ["03", "Implementation",       "Trained local facilitators deliver programmes with ongoing support and supervision."],
+  ["04", "Evaluation",           "We measure outcomes honestly and share results with all stakeholders."],
+];
+
 export function AboutPage() {
   return (
     <>
@@ -47,12 +54,12 @@ export function AboutPage() {
         <div className="container">
           <span className="section-label">Who We Are</span>
           <h2 className="section-title">Our Story</h2>
-          <p style={{ color: "var(--muted)", lineHeight: 1.8, maxWidth: 720, marginBottom: 16, fontSize: "0.95rem" }}>
+          <p className="prose-text" style={{ maxWidth: 720 }}>
             Dot Inspiration CBO was founded with a simple but powerful belief: that
             every person, regardless of their background or circumstances, deserves
             the opportunity to live a dignified, fulfilling life.
           </p>
-          <p style={{ color: "var(--muted)", lineHeight: 1.8, maxWidth: 720, fontSize: "0.95rem" }}>
+          <p className="prose-text" style={{ maxWidth: 720, marginBottom: 0 }}>
             We work in some of Uganda's most underserved communities, delivering
             programmes in education, health, economic empowerment, and environmental
             sustainability. Our approach is rooted in listening first — understanding
@@ -83,7 +90,7 @@ export function AboutPage() {
       {/* Values */}
       <section className="section section--alt">
         <div className="container">
-          <div className="text-center">
+          <div className="text-center section-intro">
             <span className="section-label">What Drives Us</span>
             <h2 className="section-title">Our Core Values</h2>
             <p className="section-subtitle">
@@ -110,35 +117,25 @@ export function AboutPage() {
             <div>
               <span className="section-label">How We Work</span>
               <h2 className="section-title">Our Approach</h2>
-              <p style={{ color: "var(--muted)", lineHeight: 1.8, marginBottom: 16, fontSize: "0.95rem" }}>
+              <p className="prose-text">
                 We believe sustainable development comes from within communities
                 themselves. That is why we start every programme with a community
                 needs assessment, ensuring our interventions are relevant, welcomed,
                 and locally owned.
               </p>
-              <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.95rem" }}>
+              <p className="prose-text">
                 We partner with local leaders, schools, health facilities, and
                 government agencies to amplify our reach and ensure our programmes
                 align with national development goals.
               </p>
             </div>
-            <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-              {[
-                ["01", "Community Assessment", "We listen before we act — understanding real needs through structured community engagement."],
-                ["02", "Co-Design",            "Communities help design programmes so solutions are relevant and locally owned."],
-                ["03", "Implementation",       "Trained local facilitators deliver programmes with ongoing support and supervision."],
-                ["04", "Evaluation",           "We measure outcomes honestly and share results with all stakeholders."],
-              ].map(([num, title, text]) => (
-                <div key={num} style={{ display: "flex", gap: 16, alignItems: "flex-start" }}>
-                  <div style={{
-                    width: 36, height: 36, borderRadius: 8,
-                    background: "var(--green-700)", color: "white",
-                    display: "flex", alignItems: "center", justifyContent: "center",
-                    fontWeight: 800, fontSize: "0.8rem", flexShrink: 0,
-                  }}>{num}</div>
+            <div className="step-list">
+              {APPROACH_STEPS.map(([num, title, text]) => (
+                <div key={num} className="step-item">
+                  <div className="step-item__num">{num}</div>
                   <div>
-                    <div style={{ fontWeight: 700, fontSize: "0.95rem", marginBottom: 4 }}>{title}</div>
-                    <div style={{ fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.6 }}>{text}</div>
+                    <div className="step-item__title">{title}</div>
+                    <div className="step-item__text">{text}</div>
                   </div>
                 </div>
               ))}

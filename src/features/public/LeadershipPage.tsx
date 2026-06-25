@@ -3,37 +3,37 @@ const TEAM = [
     initials: "OC",
     name: "Othieno Constant",
     role: "Executive Director & Founder",
-    bio: "Othieno Constant founded Dot Inspiration CBO with a vision of empowering marginalised communities across Uganda. He drives the organisation's strategic direction and oversees all programme delivery, partnerships, and community engagement.",
+    bio: "Othieno founded Dot Inspiration CBO in 2018 with a vision of empowering Mukono District's most marginalised communities. He sets the organisation's strategic direction, leads donor and government partnerships, and personally oversees programme delivery — ensuring every initiative stays true to its community-first mission.",
   },
   {
     initials: "AN",
     name: "Akello Namukwaya",
     role: "Director of Programmes",
-    bio: "Akello leads programme design and implementation, ensuring all activities are community-led, impact-focused, and aligned with the organisation's mission. She has over eight years of experience in community development across East Africa.",
+    bio: "Akello oversees the design, implementation, and quality assurance of all four programme areas. With over eight years of community development experience across East Africa, she ensures every intervention is evidence-based, locally relevant, and measurable.",
   },
   {
     initials: "BM",
     name: "Byaruhanga Moses",
     role: "Finance & Administration Officer",
-    bio: "Moses oversees financial management, organisational compliance, and administrative operations. He ensures transparent stewardship of donor resources and maintains the organisation's accountability standards.",
+    bio: "Moses manages all financial operations, compliance, and administrative systems. He maintains rigorous standards of donor stewardship — every contribution is tracked, reported, and verifiable — and oversees the organisation's accountability to all stakeholders.",
   },
   {
     initials: "FR",
     name: "Fortunate Rwamwojo",
     role: "Community Mobilisation Officer",
-    bio: "Fortunate is the bridge between the organisation and the communities we serve. She conducts needs assessments, coordinates community outreaches, and ensures that beneficiaries remain at the centre of all our work.",
+    bio: "Fortunate is the face of Dot Inspiration CBO in the communities of Mukono District. She conducts needs assessments, leads community outreach, coordinates programme participants, and ensures the voices of beneficiaries shape every decision we make.",
   },
   {
     initials: "JO",
     name: "James Okello",
     role: "Monitoring & Evaluation Officer",
-    bio: "James designs and manages the organisation's M&E framework, tracking programme outcomes and ensuring that Dot Inspiration CBO continues to learn, adapt, and demonstrate measurable impact to stakeholders.",
+    bio: "James designs and manages the organisation's M&E framework — tracking indicators, collecting field data, and producing impact reports. His work ensures we learn from every programme and demonstrate credible, measurable outcomes to donors and partners.",
   },
   {
     initials: "GN",
     name: "Grace Nalwoga",
     role: "Partnerships & Communications Officer",
-    bio: "Grace manages donor relations, strategic partnerships, and the organisation's public communications. She works to grow Dot Inspiration CBO's visibility and resource base to expand programme reach.",
+    bio: "Grace leads donor relations, strategic partnerships, and external communications. She grows the organisation's visibility and resource base, building relationships with funders, media, and partner organisations who share our commitment to community development.",
   },
 ];
 
@@ -43,8 +43,8 @@ export function LeadershipPage() {
       <div className="page-hero">
         <h1 className="page-hero__title">Our Leadership Team</h1>
         <p className="page-hero__subtitle">
-          Dedicated professionals committed to delivering transparent,
-          community-centred development across Uganda.
+          Experienced professionals who have dedicated their careers to serving
+          Mukono District and surrounding communities since 2018.
         </p>
       </div>
 
@@ -54,8 +54,8 @@ export function LeadershipPage() {
             <span className="section-label">The People Behind the Mission</span>
             <h2 className="section-title">Meet Our Team</h2>
             <p className="section-subtitle">
-              Our team brings together expertise in community development, health,
-              education, finance, and communications.
+              Our team brings together deep expertise in community development,
+              health, education, finance, and communications — united by one purpose.
             </p>
           </div>
 
@@ -80,25 +80,25 @@ export function LeadershipPage() {
               <span className="section-label">Governance</span>
               <h2 className="section-title">How We Are Governed</h2>
               <p style={{ color: "var(--muted)", lineHeight: 1.8, marginBottom: 16, fontSize: "0.95rem" }}>
-                Dot Inspiration CBO is registered under Ugandan law and operates
-                under the governance of an independent Board of Directors. The Board
-                provides strategic oversight, fiduciary accountability, and ensures
-                the organisation remains true to its mission.
+                Dot Inspiration CBO has operated in Mukono District since 2018,
+                registered under Ugandan law and governed by an independent Board
+                of Directors. The Board provides strategic oversight, fiduciary
+                accountability, and ensures the organisation remains true to its mission.
               </p>
               <p style={{ color: "var(--muted)", lineHeight: 1.8, fontSize: "0.95rem" }}>
-                We are committed to full transparency: financial reports are
-                prepared annually and are available to all donors and partners on
-                request.
+                We are committed to full transparency. Financial reports are prepared
+                annually and are available to all donors and partners on request.
+                We report quarterly to funders on programme progress and outcomes.
               </p>
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
               {[
-                ["📋", "Registered CBO",     "Legally registered Community Based Organisation under Ugandan law."],
-                ["🔍", "Independent Audit",   "Annual financial statements independently reviewed."],
-                ["📊", "Donor Reporting",     "Quarterly programme reports shared with all funders."],
-                ["🤝", "Community Oversight", "Community representatives participate in programme governance."],
+                ["📋", "Registered CBO",       "Legally registered Community Based Organisation under Ugandan law."],
+                ["🔍", "Independent Oversight", "Annual financial statements independently reviewed by qualified auditors."],
+                ["📊", "Donor Reporting",       "Quarterly programme reports shared with all funders and partners."],
+                ["🤝", "Community Governance",  "Beneficiary representatives actively participate in programme decisions."],
               ].map(([icon, title, text]) => (
-                <div key={title} style={{
+                <div key={String(title)} style={{
                   display: "flex", gap: 16,
                   background: "var(--white)", border: "1px solid var(--border)",
                   borderRadius: 10, padding: "18px 22px",
@@ -118,12 +118,12 @@ export function LeadershipPage() {
       {/* Join the team */}
       <section className="section">
         <div className="container text-center">
-          <span className="section-label">Volunteer</span>
-          <h2 className="section-title">Join Our Team</h2>
+          <span className="section-label">Join Us</span>
+          <h2 className="section-title">Work With Us</h2>
           <p className="section-subtitle">
-            We are always looking for passionate individuals who want to make a
-            difference. Whether as a volunteer, intern, or long-term team member —
-            there is a place for you here.
+            We are always looking for passionate, skilled individuals who want to
+            make a tangible difference. Whether as a volunteer, intern, or
+            long-term team member — there is a place for you here.
           </p>
           <a
             href="mailto:info@dotinspirationcbo.org"

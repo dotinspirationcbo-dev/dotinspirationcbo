@@ -37,8 +37,8 @@ export function AboutPage() {
       <div className="page-hero">
         <h1 className="page-hero__title">About Dot Inspiration CBO</h1>
         <p className="page-hero__subtitle">
-          A registered Community Based Organisation committed to empowering
-          communities across Uganda since 2021.
+          A registered Community Based Organisation serving Mukono District
+          and surrounding communities since 2018.
         </p>
       </div>
 

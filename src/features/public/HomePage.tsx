@@ -1,32 +1,47 @@
 import { Link } from "react-router-dom";
 
+const TRUST_SIGNALS = [
+  "Registered Community Based Organisation",
+  "Serving Mukono District since 2018",
+  "Transparent Operations",
+  "Community-Led Programmes",
+];
+
 const STATS = [
   { number: "1,200+", label: "Beneficiaries Reached" },
   { number: "4",      label: "Active Programs" },
   { number: "5",      label: "Districts Covered" },
-  { number: "3+",     label: "Years of Service" },
+  { number: "8+",     label: "Years of Service" },
 ];
 
 const PROGRAMS_PREVIEW = [
   {
     icon: "📚",
     title: "Education & Literacy",
-    desc: "Improving access to quality education and literacy for children and youth in underserved communities.",
+    for: "Children, youth & adult learners",
+    impact: "400+ learners reached per year",
+    desc: "Breaking cycles of poverty by expanding access to quality education, literacy, and mentorship for Uganda's most underserved learners.",
   },
   {
     icon: "🏥",
     title: "Community Health",
-    desc: "Promoting health awareness, sanitation, and access to essential healthcare services.",
+    for: "Families & community members",
+    impact: "500+ people reached per outreach",
+    desc: "Bridging critical gaps in healthcare through community outreaches, maternal health support, and training local health champions.",
   },
   {
     icon: "💡",
     title: "Economic Empowerment",
-    desc: "Skills training, microfinance support, and entrepreneurship programs to create sustainable livelihoods.",
+    for: "Women, youth & small entrepreneurs",
+    impact: "150+ women economically empowered",
+    desc: "Equipping individuals with the skills, savings groups, and business networks to build sustainable, self-reliant livelihoods.",
   },
   {
     icon: "🌱",
     title: "Environmental Sustainability",
-    desc: "Tree planting, clean energy awareness, and environmental education for a greener Uganda.",
+    for: "Farming communities & future generations",
+    impact: "5,000+ trees planted to date",
+    desc: "Protecting ecosystems and climate resilience through reforestation, clean energy promotion, and sustainable agriculture training.",
   },
 ];
 
@@ -36,22 +51,28 @@ export function HomePage() {
       {/* ── Hero ── */}
       <section className="hero">
         <div className="hero__inner">
-          <div className="hero__badge">Registered CBO · Uganda</div>
+          <div className="hero__badge">Registered CBO · Mukono District, Uganda</div>
           <h1 className="hero__title">
             Inspiring Communities,<br />
             <em>Transforming Lives</em>
           </h1>
           <p className="hero__subtitle">
-            Dot Inspiration CBO empowers individuals and communities through education,
-            health, economic opportunity, and environmental action across Uganda.
+            Since 2018, we have been walking alongside the most vulnerable families
+            in Mukono District and beyond — building futures through education, health,
+            economic opportunity, and environmental action.
           </p>
           <div className="hero__ctas">
             <Link to="/public/support" className="btn btn-primary">
-              ❤️ Support Our Work
+              ❤️ Donate Now
             </Link>
-            <Link to="/public/programs" className="btn btn-secondary">
-              Our Programs →
+            <Link to="/public/contact" className="btn btn-secondary">
+              Volunteer With Us
             </Link>
+          </div>
+          <div className="trust-strip">
+            {TRUST_SIGNALS.map((t) => (
+              <span key={t} className="trust-badge">{t}</span>
+            ))}
           </div>
         </div>
       </section>
@@ -73,10 +94,10 @@ export function HomePage() {
         <div className="container">
           <div className="text-center section-intro">
             <span className="section-label">What We Do</span>
-            <h2 className="section-title">Our Program Areas</h2>
+            <h2 className="section-title">Our Four Program Areas</h2>
             <p className="section-subtitle">
-              We work across four interconnected areas to create lasting change
-              in communities throughout Uganda.
+              Every programme is community-designed, locally delivered, and measured
+              for real impact in Mukono District and surrounding communities.
             </p>
           </div>
           <div className="programs-grid">
@@ -84,7 +105,9 @@ export function HomePage() {
               <div key={p.title} className="program-card">
                 <div className="program-card__icon">{p.icon}</div>
                 <div className="program-card__title">{p.title}</div>
+                <div className="program-card__meta">For: {p.for}</div>
                 <p className="program-card__desc">{p.desc}</p>
+                <div className="program-card__impact">📍 {p.impact}</div>
                 <Link to="/public/programs" className="program-card__tag">
                   Learn more →
                 </Link>
@@ -98,11 +121,11 @@ export function HomePage() {
       <section className="section section--dark">
         <div className="container">
           <div className="text-center section-intro">
-            <span className="section-label">Our Impact</span>
-            <h2 className="section-title">Making a Measurable Difference</h2>
+            <span className="section-label">Our Impact Since 2018</span>
+            <h2 className="section-title">Real People. Real Change.</h2>
             <p className="section-subtitle">
-              Every programme we run is designed to achieve real, measurable
-              outcomes for the people we serve.
+              Eight years of community-led programmes delivering measurable,
+              lasting outcomes for the people who need it most.
             </p>
           </div>
           <div className="impact-grid">
@@ -120,7 +143,7 @@ export function HomePage() {
             </div>
             <div className="impact-card">
               <div className="impact-card__number">5,000+</div>
-              <div className="impact-card__label">Trees planted for the environment</div>
+              <div className="impact-card__label">Trees planted across the region</div>
             </div>
           </div>
         </div>
@@ -130,10 +153,10 @@ export function HomePage() {
       <section className="section">
         <div className="container text-center">
           <span className="section-label">Get Involved</span>
-          <h2 className="section-title">Join Us in Creating Change</h2>
+          <h2 className="section-title">Your Support Changes Lives</h2>
           <p className="section-subtitle">
-            Whether you donate, volunteer, or partner with us — your involvement
-            matters and creates a direct impact in our communities.
+            A donation funds a child's education. Volunteering transforms a community.
+            A partnership scales our reach. Every form of support matters.
           </p>
           <div style={{ display: "flex", gap: 14, justifyContent: "center", flexWrap: "wrap", marginTop: 32 }}>
             <Link to="/public/support" className="btn btn-primary">
@@ -143,7 +166,7 @@ export function HomePage() {
               Volunteer With Us
             </Link>
             <Link to="/public/contact" className="btn btn-outline-green">
-              Partner With Us
+              Become a Partner
             </Link>
           </div>
         </div>

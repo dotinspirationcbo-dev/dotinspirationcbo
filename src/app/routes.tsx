@@ -3,6 +3,7 @@ import { SignIn, SignUp } from "@clerk/clerk-react";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import { MembersPage } from "../features/members/MembersPage";
 import { DonationsPage } from "../features/donations/DonationsPage";
+import AdminPage from "../features/admin/AdminPage";
 import { PublicLayout } from "../features/public/PublicLayout";
 import { HomePage } from "../features/public/HomePage";
 import { AboutPage } from "../features/public/AboutPage";
@@ -73,6 +74,16 @@ export function AppRoutes() {
         element={
           <ProtectedRoute requiredRole="admin">
             <DonationsPage />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Admin: Content editor */}
+      <Route
+        path="/admin/content"
+        element={
+          <ProtectedRoute requiredRole="admin">
+            <AdminPage />
           </ProtectedRoute>
         }
       />

@@ -1,0 +1,73 @@
+We are NOT rebuilding or redesigning the website.
+
+The Dot Inspiration CBO website is already complete and live.
+
+We are now doing FINAL CONSISTENCY AND POLISH ONLY.
+
+CRITICAL CONSTRAINTS:
+
+* Do NOT change layout structure
+* Do NOT rewrite content
+* Do NOT modify routing or architecture
+* Do NOT redesign pages from scratch
+* Keep existing color theme exactly as it is
+* Keep all content unchanged unless it is clearly duplicated or broken
+
+TASKS:
+
+1. Consistency check across ALL pages:
+
+   * Ensure same spacing system is used everywhere
+   * Ensure typography hierarchy is consistent (H1, H2, H3)
+   * Ensure buttons (Join, Donate, Volunteer) look identical across site
+   * Ensure card styles are consistent across Programs, About, Home
+
+2. Remove inconsistencies:
+
+   * Fix any repeated or redundant headings like "Dot Inspiration CBO"
+   * Ensure "0 Executive Leaders" or similar placeholders are fully removed or replaced with neutral empty-state text
+   * Remove any visual duplication of sections
+
+3. Color system enforcement:
+
+   * Ensure the same primary color is used for:
+
+     * Buttons
+     * Links
+     * Active navigation states
+   * Ensure hover states are consistent everywhere
+
+4. Layout polish:
+
+   * Ensure equal spacing between all major sections
+   * Ensure no section feels cramped or overly dense
+   * Ensure footer layout is consistent and aligned across all pages
+
+5. Navigation consistency:
+
+   * Ensure active page highlight works consistently
+   * Ensure header and footer appear identical across all public pages
+
+6. Trust/UI polish:
+
+   * Ensure donation/support sections look clean, structured, and readable
+   * Ensure contact details are not duplicated excessively across sections
+   * Improve readability without changing meaning or content
+
+7. Do NOT:
+
+   * Add new pages
+   * Add new features
+   * Modify backend logic
+   * Change React structure
+   * Replace content
+
+8. Run TypeScript check after all changes and ensure zero errors.
+
+SUCCESS CRITERIA:
+
+* Website looks visually consistent across all pages
+* No duplicated or conflicting styling
+* Same design language everywhere
+* Professional NGO-level polish
+* Zero functional regressions

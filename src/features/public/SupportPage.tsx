@@ -19,7 +19,7 @@ const TRUST_BAR = [
   {
     icon: "📋",
     title: "Registered CBO",
-    text: "Legally registered under Ugandan law. Operating since 2018.",
+    text: "Legally registered under Ugandan law. Operating since 2026.",
   },
 ];
 
@@ -29,7 +29,7 @@ export function SupportPage() {
       <div className="page-hero">
         <h1 className="page-hero__title">Support Our Work</h1>
         <p className="page-hero__subtitle">
-          Since 2018, communities in Mukono District have counted on our programmes.
+          Since 2026, communities in Mukono District have counted on our programmes.
           Your generosity — however large or small — keeps that work going.
         </p>
       </div>

@@ -3,7 +3,7 @@ const TEAM = [
     initials: "OC",
     name: "Othieno Constant",
     role: "Executive Director & Founder",
-    bio: "Othieno founded Dot Inspiration CBO in 2018 with a vision of empowering Mukono District's most marginalised communities. He sets the organisation's strategic direction, leads donor and government partnerships, and personally oversees programme delivery — ensuring every initiative stays true to its community-first mission.",
+    bio: "Othieno founded Dot Inspiration CBO in 2026 with a vision of empowering Mukono District's most marginalised communities. He sets the organisation's strategic direction, leads donor and government partnerships, and personally oversees programme delivery — ensuring every initiative stays true to its community-first mission.",
   },
   {
     initials: "AN",
@@ -44,7 +44,7 @@ export function LeadershipPage() {
         <h1 className="page-hero__title">Our Leadership Team</h1>
         <p className="page-hero__subtitle">
           Experienced professionals who have dedicated their careers to serving
-          Mukono District and surrounding communities since 2018.
+          Mukono District and surrounding communities since 2026.
         </p>
       </div>
 
@@ -80,7 +80,7 @@ export function LeadershipPage() {
               <span className="section-label">Governance</span>
               <h2 className="section-title">How We Are Governed</h2>
               <p style={{ color: "var(--muted)", lineHeight: 1.8, marginBottom: 16, fontSize: "0.95rem" }}>
-                Dot Inspiration CBO has operated in Mukono District since 2018,
+                Dot Inspiration CBO has operated in Mukono District since 2026,
                 registered under Ugandan law and governed by an independent Board
                 of Directors. The Board provides strategic oversight, fiduciary
                 accountability, and ensures the organisation remains true to its mission.

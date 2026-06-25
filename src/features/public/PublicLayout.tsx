@@ -53,7 +53,7 @@ export function PublicLayout() {
           <div className="pub-footer__brand">
             <strong>Dot Inspiration CBO</strong>
             <p>
-              Serving Mukono District and surrounding communities since 2018.
+              Serving Mukono District and surrounding communities since 2026.
               We deliver education, health, economic empowerment, and
               environmental programmes that create lasting change.
             </p>
@@ -94,7 +94,7 @@ export function PublicLayout() {
           <span>
             &copy; {new Date().getFullYear()} Dot Inspiration CBO. All rights reserved.
           </span>
-          <span>Registered CBO · Serving Mukono District since 2018 · Uganda</span>
+          <span>Registered CBO · Serving Mukono District since 2026 · Uganda</span>
         </div>
       </footer>
     </>

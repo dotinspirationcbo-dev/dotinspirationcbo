@@ -38,7 +38,7 @@ export function AboutPage() {
         <h1 className="page-hero__title">About Dot Inspiration CBO</h1>
         <p className="page-hero__subtitle">
           A registered Community Based Organisation serving Mukono District
-          and surrounding communities since 2018.
+          and surrounding communities since 2026.
         </p>
       </div>
 

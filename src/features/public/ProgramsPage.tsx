@@ -106,7 +106,7 @@ export function ProgramsPage() {
       <div className="page-hero">
         <h1 className="page-hero__title">Our Programs</h1>
         <p className="page-hero__subtitle">
-          Four interconnected areas of work, serving Mukono District since 2018 —
+          Four interconnected areas of work, serving Mukono District since 2026 —
           each designed with communities, for communities.
         </p>
       </div>

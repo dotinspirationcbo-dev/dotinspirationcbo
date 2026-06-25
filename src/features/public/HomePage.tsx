@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const TRUST_SIGNALS = [
   "Registered Community Based Organisation",
-  "Serving Mukono District since 2018",
+  "Serving Mukono District since 2026",
   "Transparent Operations",
   "Community-Led Programmes",
 ];
@@ -57,7 +57,7 @@ export function HomePage() {
             <em>Transforming Lives</em>
           </h1>
           <p className="hero__subtitle">
-            Since 2018, we have been walking alongside the most vulnerable families
+            Since 2026, we have been walking alongside the most vulnerable families
             in Mukono District and beyond — building futures through education, health,
             economic opportunity, and environmental action.
           </p>
@@ -121,7 +121,7 @@ export function HomePage() {
       <section className="section section--dark">
         <div className="container">
           <div className="text-center section-intro">
-            <span className="section-label">Our Impact Since 2018</span>
+            <span className="section-label">Our Impact Since 2026</span>
             <h2 className="section-title">Real People. Real Change.</h2>
             <p className="section-subtitle">
               Eight years of community-led programmes delivering measurable,

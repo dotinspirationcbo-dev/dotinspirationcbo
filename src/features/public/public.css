@@ -6,16 +6,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --green-900: #0f3d22;
-  --green-800: #145a31;
-  --green-700: #1a7040;
-  --green-600: #208c4f;
-  --green-500: #27a860;
-  --green-100: #dcfce7;
-  --green-50:  #f0fdf4;
-  --amber-500: #f59e0b;
-  --amber-600: #d97706;
-  --amber-50:  #fffbeb;
+  /* ── Brand palette: navy blue + orange ── */
+  --green-900: #0d1b3e;   /* was dark green → now darkest navy  */
+  --green-800: #1a2f6b;   /* was dark green → deep navy         */
+  --green-700: #1d4ed8;   /* was mid green  → brand blue        */
+  --green-600: #2563eb;   /* was mid green  → brand blue light  */
+  --green-500: #3b82f6;   /* was light green → sky blue         */
+  --green-100: #dbeafe;   /* was light green → blue-100         */
+  --green-50:  #eff6ff;   /* was lightest green → blue-50       */
+  --amber-500: #f97316;   /* was amber → brand orange           */
+  --amber-600: #ea580c;   /* was amber dark → brand orange dark */
+  --amber-50:  #fff7ed;   /* was amber light → orange-50        */
   --text:      #111827;
   --muted:     #6b7280;
   --border:    #e5e7eb;

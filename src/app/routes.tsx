@@ -2,15 +2,18 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { SignIn, SignUp } from "@clerk/clerk-react";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import { MembersPage } from "../features/members/MembersPage";
+import { DonationsPage } from "../features/donations/DonationsPage";
+import { SupportPage } from "../features/public/SupportPage";
 
 /**
  * Central route registry for Dot Inspiration CBO.
  *
  * Route namespaces:
- *   /public/*        → always accessible (unauthenticated)
- *   /member/*        → any authenticated user
- *   /admin/*         → admin role only
- *   /admin/members   → Members management page
+ *   /public/*          → always accessible (unauthenticated)
+ *   /member/*          → any authenticated user
+ *   /admin/members     → Members management (admin only)
+ *   /admin/donations   → Donations management (admin only)
+ *   /admin/*           → Admin catch-all
  */
 export function AppRoutes() {
   return (
@@ -19,7 +22,7 @@ export function AppRoutes() {
       <Route path="/" element={<Navigate to="/public" replace />} />
 
       {/* Public — no auth required */}
-      <Route path="/public" element={<div>Public — Dot Inspiration CBO</div>} />
+      <Route path="/public" element={<SupportPage />} />
 
       {/* Clerk auth UI routes */}
       <Route
@@ -47,6 +50,16 @@ export function AppRoutes() {
         element={
           <ProtectedRoute requiredRole="admin">
             <MembersPage />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Admin: Donations management */}
+      <Route
+        path="/admin/donations"
+        element={
+          <ProtectedRoute requiredRole="admin">
+            <DonationsPage />
           </ProtectedRoute>
         }
       />

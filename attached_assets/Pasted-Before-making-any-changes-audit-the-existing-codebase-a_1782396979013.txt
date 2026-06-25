@@ -1,0 +1,104 @@
+Before making any changes, audit the existing codebase and identify whether a Donations domain already exists.
+
+If a Donations domain already exists:
+
+* Reuse it.
+* Refactor it to match the architecture used by Members.
+* Do not duplicate types, services, hooks, or routes.
+
+If a Donations domain does not exist:
+Create a complete Donations core layer using the same patterns as the Members feature.
+
+Requirements:
+
+1. Create canonical donation types:
+
+   * Donation
+   * CreateDonationData
+   * UpdateDonationData
+   * DonationStatus
+   * DonationMethod
+
+2. Create:
+   src/services/donations.service.ts
+
+   Following the same conventions as members.service.ts:
+
+   * getDonations()
+   * getDonationById()
+   * createDonation()
+   * updateDonation()
+
+3. Create React Query hooks:
+
+   * useDonations()
+   * useCreateDonation()
+   * useUpdateDonation()
+
+4. Create:
+   src/features/donations/index.ts
+
+   Export all donation hooks, components, and types.
+
+5. Create a simple DonationsPage:
+
+   * Display donations in a table.
+   * Show donor name.
+   * Show amount.
+   * Show method.
+   * Show status.
+   * Follow the same design approach as MembersPage.
+
+6. Add route protection:
+
+   * Admin only.
+   * Reuse existing RBAC functions.
+   * Do not create new permission systems.
+
+7. Maintain architectural consistency:
+
+   * No duplicated types.
+   * No duplicated services.
+   * No duplicated role logic.
+   * No duplicated React Query logic.
+
+8. Preserve all existing functionality.
+
+   * Do not modify working Members features.
+   * Do not modify authentication.
+   * Do not modify permissions.
+
+9. Use these public contact details everywhere donation information appears:
+
+   Email:
+   [info@dotinspirationcbo.org](mailto:info@dotinspirationcbo.org)
+
+   Phone:
+   +256 794 722 080
+
+10. Add a professional public-facing "Support Our Work" section using:
+
+Phone:
++256 794 722 080
+
+Bank:
+Exim Bank Uganda
+
+Account Name:
+Othieno Constant
+
+Account Number:
+0071013100
+
+Transparency Note:
+This account is temporarily used to receive support for Dot Inspiration CBO while organizational financial systems are being strengthened.
+
+11. Run a complete TypeScript verification after all changes.
+
+Success criteria:
+
+* Zero TypeScript errors.
+* No architectural duplication.
+* No broken routes.
+* No regressions.
+* Donations feature follows the exact same architecture as Members.

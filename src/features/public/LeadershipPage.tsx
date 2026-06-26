@@ -71,6 +71,8 @@ export function LeadershipPage() {
                     src={leader.photo}
                     alt={leader.name}
                     className="leader-profile-card__photo"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div className="leader-profile-card__body">

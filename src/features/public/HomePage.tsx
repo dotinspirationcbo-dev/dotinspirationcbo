@@ -134,7 +134,13 @@ export function HomePage() {
           <div className="photo-gallery">
             {GALLERY.map((img) => (
               <div key={img.src} className="photo-gallery__item">
-                <img src={img.src} alt={img.alt} className="photo-gallery__img" />
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="photo-gallery__img"
+                  loading="lazy"
+                  decoding="async"
+                />
               </div>
             ))}
           </div>

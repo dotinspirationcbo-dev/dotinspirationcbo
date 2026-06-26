@@ -79,6 +79,8 @@ export function AboutPage() {
               <img
                 src="/Images/meeting pics (2).jpg"
                 alt="Dot Inspiration CBO community meeting"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

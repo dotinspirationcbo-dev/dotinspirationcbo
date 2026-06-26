@@ -46,6 +46,15 @@ const PROGRAMS_PREVIEW = [
   },
 ];
 
+const GALLERY = [
+  { src: "/Images/meeting pics (2).jpg",  alt: "Community meeting in session" },
+  { src: "/Images/meeting pics (3).jpg",  alt: "Field engagement with community members" },
+  { src: "/Images/meeting pics (4).jpg",  alt: "Programme activity on the ground" },
+  { src: "/Images/meeting pics (5).png",  alt: "Community gathering and discussion" },
+  { src: "/Images/meeting pics (6).png",  alt: "Youth programme session" },
+  { src: "/Images/meeting pics (7).png",  alt: "Group engagement session" },
+];
+
 export function HomePage() {
   return (
     <>
@@ -105,6 +114,27 @@ export function HomePage() {
                 <Link to="/public/programs" className="program-card__tag">
                   Learn more →
                 </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Photo Gallery — From the Field ── */}
+      <section className="section">
+        <div className="container">
+          <div className="text-center section-intro">
+            <span className="section-label">From the Field</span>
+            <h2 className="section-title">Our Work in Action</h2>
+            <p className="section-subtitle">
+              Real people. Real communities. Real change — happening across
+              Mukono District every day.
+            </p>
+          </div>
+          <div className="photo-gallery">
+            {GALLERY.map((img) => (
+              <div key={img.src} className="photo-gallery__item">
+                <img src={img.src} alt={img.alt} className="photo-gallery__img" />
               </div>
             ))}
           </div>

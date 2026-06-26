@@ -12,6 +12,21 @@ const STATS = [
   { number: "2026",   label: "Community-Based Org." },
 ];
 
+const LEADERS = [
+  {
+    name: "Mutebi Julius",
+    role: "Chairman",
+    bio: "Providing strategic direction and board oversight for Dot Inspiration CBO. A passionate community leader committed to sustainable development across Mukono District.",
+    photo: "/Images/Mutebi Julius-Chairman-png.png",
+  },
+  {
+    name: "Othieno Constant",
+    role: "Executive Director",
+    bio: "Leading the day-to-day operations and programme delivery of Dot Inspiration CBO. Dedicated to transforming lives through education, youth empowerment, and community-driven development.",
+    photo: "/Images/Othieno Constant-Executive Director-Png (1).png",
+  },
+];
+
 export function LeadershipPage() {
   return (
     <>
@@ -23,7 +38,7 @@ export function LeadershipPage() {
         </p>
       </div>
 
-      {/* Leadership placeholder */}
+      {/* Leadership Team */}
       <section className="section">
         <div className="container">
           <div className="text-center section-intro">
@@ -36,7 +51,7 @@ export function LeadershipPage() {
           </div>
 
           {/* Leadership stats strip */}
-          <div className="stats-strip" style={{ borderRadius: 12, overflow: "hidden", marginBottom: 48 }}>
+          <div className="stats-strip" style={{ borderRadius: 12, overflow: "hidden", marginBottom: 56 }}>
             <div className="stats-strip__grid">
               {STATS.map((s) => (
                 <div key={s.label} className="stats-strip__item">
@@ -47,20 +62,24 @@ export function LeadershipPage() {
             </div>
           </div>
 
-          <div className="text-center" style={{ padding: "48px 0" }}>
-            <div style={{ fontSize: "3rem", marginBottom: 16 }}>👥</div>
-            <h3 style={{ fontWeight: 700, color: "var(--green-900)", marginBottom: 12 }}>
-              Leadership details coming soon
-            </h3>
-            <p className="section-subtitle" style={{ margin: "0 auto" }}>
-              We are finalising our leadership profiles. Please check back soon or
-              reach out directly to learn more about the team driving our mission.
-            </p>
-            <div className="cta-group">
-              <a href="mailto:info@dotinspirationcbo.org" className="btn btn-primary">
-                Get In Touch →
-              </a>
-            </div>
+          {/* Leader Cards */}
+          <div className="leader-cards-grid">
+            {LEADERS.map((leader) => (
+              <div key={leader.name} className="leader-profile-card">
+                <div className="leader-profile-card__photo-wrap">
+                  <img
+                    src={leader.photo}
+                    alt={leader.name}
+                    className="leader-profile-card__photo"
+                  />
+                </div>
+                <div className="leader-profile-card__body">
+                  <div className="leader-profile-card__name">{leader.name}</div>
+                  <div className="leader-profile-card__role">{leader.role}</div>
+                  <p className="leader-profile-card__bio">{leader.bio}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

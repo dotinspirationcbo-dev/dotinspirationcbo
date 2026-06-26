@@ -64,14 +64,24 @@ export function AboutPage() {
       {/* Who We Are */}
       <section className="section">
         <div className="container">
-          <span className="section-label">Who We Are</span>
-          <h2 className="section-title">Our Story</h2>
-          <p className="prose-text" style={{ maxWidth: 720 }}>
-            {siteContent.about.description}
-          </p>
-          <p className="prose-text" style={{ maxWidth: 720, marginBottom: 0 }}>
-            {siteContent.about.extended}
-          </p>
+          <div className="about-story-grid">
+            <div>
+              <span className="section-label">Who We Are</span>
+              <h2 className="section-title">Our Story</h2>
+              <p className="prose-text">
+                {siteContent.about.description}
+              </p>
+              <p className="prose-text" style={{ marginBottom: 0 }}>
+                {siteContent.about.extended}
+              </p>
+            </div>
+            <div className="about-story-photo">
+              <img
+                src="/Images/meeting pics (2).jpg"
+                alt="Dot Inspiration CBO community meeting"
+              />
+            </div>
+          </div>
 
           <div className="mission-vision">
             <div className="mv-card mv-card--mission">

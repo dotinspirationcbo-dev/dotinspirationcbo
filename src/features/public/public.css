@@ -786,6 +786,102 @@ a   { color: inherit; text-decoration: none; }
 .info-card__title { font-weight: 700; font-size: 0.9rem; margin-bottom: 4px; }
 .info-card__text  { font-size: 0.84rem; color: var(--muted); }
 
+/* ── Leader profile cards (Leadership page) ─────────────── */
+.leader-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+.leader-profile-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow .2s, transform .2s;
+}
+.leader-profile-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.leader-profile-card__photo-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--gray-100);
+}
+.leader-profile-card__photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+.leader-profile-card__body {
+  padding: 24px;
+  text-align: center;
+}
+.leader-profile-card__name {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--green-900);
+  margin-bottom: 4px;
+}
+.leader-profile-card__role {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green-600);
+  margin-bottom: 14px;
+}
+.leader-profile-card__bio {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ── Photo gallery (Homepage) ────────────────────────────── */
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.photo-gallery__item {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background: var(--gray-100);
+}
+.photo-gallery__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .35s ease;
+}
+.photo-gallery__item:hover .photo-gallery__img { transform: scale(1.04); }
+
+/* ── About page story with photo ─────────────────────────── */
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.about-story-photo {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.about-story-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 /* ── Reach badge (programs page) ─────────────────────────── */
 .reach-badge {
   display: inline-flex;

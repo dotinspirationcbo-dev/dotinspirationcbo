@@ -4,7 +4,7 @@ import { runMigrations } from "./migrate";
 import router from "./router";
 import { errorHandler, notFound } from "./middleware/errorHandler";
 
-const PORT = parseInt(process.env.API_PORT ?? "5001", 10);
+const PORT = parseInt(process.env.API_PORT ?? "8000", 10);
 
 async function bootstrap(): Promise<void> {
   await runMigrations();

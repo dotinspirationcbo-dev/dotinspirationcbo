@@ -1,0 +1,2 @@
+- [Express backend setup](backend-setup.md) — API runs on port 8000 (not 5001 — Replit only allows specific ports); Vite proxies /api → localhost:8000
+- [TypeScript server config](backend-setup.md) — tsconfig.server.json needs ignoreDeprecations:"6.0" and Express 5 req.params.id requires String() cast

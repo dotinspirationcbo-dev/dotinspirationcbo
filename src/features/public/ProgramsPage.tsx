@@ -6,6 +6,7 @@ const PROGRAMS = [
     color: "#eff6ff",
     tag: "Youth Empowerment",
     title: "Youth Empowerment",
+    photo: "/Images/meeting pics (14).png",
     beneficiaries: "Young people aged 12–25 from Mukono District and surrounding areas.",
     impact: "Graduates leave with confidence, direction, and a professional network to drive their own futures.",
     desc: siteContent.programs.youthEmpowerment,
@@ -23,6 +24,7 @@ const PROGRAMS = [
     color: "#dcfce7",
     tag: "Education Support",
     title: "Education Support",
+    photo: "/Images/meeting pics (11).png",
     beneficiaries: "Out-of-school children, students from low-income families, and adult learners in Mukono District.",
     impact: "Improved literacy rates, increased school retention, greater youth confidence and career readiness.",
     desc: siteContent.programs.education,
@@ -40,6 +42,7 @@ const PROGRAMS = [
     color: "#fef9c3",
     tag: "Community Outreach",
     title: "Community Outreach",
+    photo: "/Images/meeting pics (1).jpg",
     beneficiaries: "Vulnerable families, elderly community members, and women across Nantabulirwa and Goma Division.",
     impact: "Improved household wellbeing, food security, maternal health outcomes, and stronger community social networks.",
     desc: siteContent.programs.communityOutreach,
@@ -57,6 +60,7 @@ const PROGRAMS = [
     color: "#dcfce7",
     tag: "Economic Development",
     title: "Economic Development",
+    photo: "/Images/meeting pics (13).png",
     beneficiaries: "Youth, women, and small-scale entrepreneurs lacking access to formal economic opportunities in Mukono District.",
     impact: "Increased household income, new businesses launched, stronger savings culture, and greater financial independence.",
     desc: siteContent.programs.economicDevelopment,
@@ -94,6 +98,32 @@ function ProgramTextBlock({ p }: { p: typeof PROGRAMS[0] }) {
   );
 }
 
+function ProgramHighlight({ p }: { p: typeof PROGRAMS[0] }) {
+  return (
+    <div className="program-highlight" style={{ background: p.color }}>
+      {p.photo && (
+        <div className="program-highlight__photo">
+          <img
+            src={p.photo}
+            alt={`${p.title} programme activity`}
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      )}
+      <h3 className="program-highlight__heading">Key Activities</h3>
+      <ul className="program-highlight__list">
+        {p.activities.map((a) => (
+          <li key={a} className="program-highlight__item">
+            <span className="program-highlight__check">✓</span>
+            {a}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function ProgramsPage() {
   return (
     <>
@@ -118,27 +148,13 @@ export function ProgramsPage() {
               }}
             >
               {i % 2 !== 0 && <ProgramTextBlock p={p} />}
-
-              <div className="program-highlight" style={{ background: p.color }}>
-                <div className="program-highlight__icon">{p.icon}</div>
-                <h3 className="program-highlight__heading">Key Activities</h3>
-                <ul className="program-highlight__list">
-                  {p.activities.map((a) => (
-                    <li key={a} className="program-highlight__item">
-                      <span className="program-highlight__check">✓</span>
-                      {a}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
+              <ProgramHighlight p={p} />
               {i % 2 === 0 && <ProgramTextBlock p={p} />}
             </div>
           ))}
         </div>
       </section>
 
-      {/* Partner CTA */}
       <section className="section section--dark">
         <div className="container text-center">
           <span className="section-label">Partner With Us</span>

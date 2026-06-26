@@ -931,12 +931,30 @@ a   { color: inherit; text-decoration: none; }
 /* ── Program activity card (colored highlight box) ───────── */
 .program-highlight {
   border-radius: 16px;
-  padding: 36px 32px;
+  padding: 0;
   border: 1px solid rgba(0,0,0,.06);
+  overflow: hidden;
 }
-.program-highlight__icon    { font-size: 2.5rem; margin-bottom: 16px; }
-.program-highlight__heading { font-weight: 700; margin-bottom: 20px; color: var(--green-900); }
-.program-highlight__list    { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.program-highlight__photo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--gray-100);
+  overflow: hidden;
+}
+.program-highlight__photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.program-highlight:hover .program-highlight__photo img { transform: scale(1.04); }
+.program-highlight__icon    { font-size: 2.5rem; margin: 28px 32px 0; display: block; }
+.program-highlight__heading { font-weight: 700; margin: 16px 32px 20px; color: var(--green-900); }
+.program-highlight__list    { list-style: none; display: flex; flex-direction: column; gap: 12px; padding: 0 32px 32px; }
 .program-highlight__item {
   display: flex;
   gap: 10px;

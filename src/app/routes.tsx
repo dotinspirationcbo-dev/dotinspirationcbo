@@ -1,9 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { SignIn, SignUp } from "@clerk/clerk-react";
 import { ProtectedRoute } from "../components/ProtectedRoute";
-import { MembersPage } from "../features/members/MembersPage";
-import { DonationsPage } from "../features/donations/DonationsPage";
-import AdminPage from "../features/admin/AdminPage";
 import { PublicLayout } from "../features/public/PublicLayout";
 import { HomePage } from "../features/public/HomePage";
 import { AboutPage } from "../features/public/AboutPage";
@@ -11,16 +8,21 @@ import { ProgramsPage } from "../features/public/ProgramsPage";
 import { LeadershipPage } from "../features/public/LeadershipPage";
 import { ContactPage } from "../features/public/ContactPage";
 import { SupportPage } from "../features/public/SupportPage";
+import { AdminLayout } from "../features/admin/AdminLayout";
+import { AdminOverview } from "../features/admin/AdminOverview";
+import { AdminGallery } from "../features/admin/AdminGallery";
+import { AdminOpportunities } from "../features/admin/AdminOpportunities";
+import { AdminContactMessages } from "../features/admin/AdminContactMessages";
+import { AdminLeadership } from "../features/admin/AdminLeadership";
+import { AdminSiteContent } from "../features/admin/AdminSiteContent";
+import { AdminMembers } from "../features/admin/AdminMembers";
 
 /**
  * Central route registry for Dot Inspiration CBO.
  *
  * Route namespaces:
- *   /public/*          → always accessible (unauthenticated)
- *   /member/*          → any authenticated user
- *   /admin/members     → Members management (admin only)
- *   /admin/donations   → Donations management (admin only)
- *   /admin/*           → Admin catch-all
+ *   /public/*    → always accessible (unauthenticated)
+ *   /admin/*     → all admin pages share AdminLayout (sidebar + topbar)
  */
 export function AppRoutes() {
   return (
@@ -48,55 +50,27 @@ export function AppRoutes() {
         element={<SignUp routing="path" path="/sign-up" />}
       />
 
-      {/* Member area — any authenticated user */}
+      {/* Admin dashboard — all routes share AdminLayout */}
       <Route
-        path="/member/*"
-        element={
-          <ProtectedRoute>
-            <div>Member area — authenticated</div>
-          </ProtectedRoute>
-        }
-      />
-
-      {/* Admin: Members management */}
-      <Route
-        path="/admin/members"
+        path="/admin"
         element={
           <ProtectedRoute requiredRole="admin">
-            <MembersPage />
+            <AdminLayout />
           </ProtectedRoute>
         }
-      />
-
-      {/* Admin: Donations management */}
-      <Route
-        path="/admin/donations"
-        element={
-          <ProtectedRoute requiredRole="admin">
-            <DonationsPage />
-          </ProtectedRoute>
-        }
-      />
-
-      {/* Admin: Content editor */}
-      <Route
-        path="/admin/content"
-        element={
-          <ProtectedRoute requiredRole="admin">
-            <AdminPage />
-          </ProtectedRoute>
-        }
-      />
-
-      {/* Admin: catch-all (future admin pages land here until routed) */}
-      <Route
-        path="/admin/*"
-        element={
-          <ProtectedRoute requiredRole="admin">
-            <div>Admin area — admin role required</div>
-          </ProtectedRoute>
-        }
-      />
+      >
+        <Route index              element={<AdminOverview />} />
+        <Route path="gallery"      element={<AdminGallery />} />
+        <Route path="opportunities" element={<AdminOpportunities />} />
+        <Route path="messages"     element={<AdminContactMessages />} />
+        <Route path="leadership"   element={<AdminLeadership />} />
+        <Route path="site-content" element={<AdminSiteContent />} />
+        <Route path="members"      element={<AdminMembers />} />
+        {/* Legacy content route — redirect to unified editor */}
+        <Route path="content"      element={<Navigate to="/admin/site-content" replace />} />
+        {/* Legacy donations route — placeholder until donations page is wrapped */}
+        <Route path="donations"    element={<Navigate to="/admin" replace />} />
+      </Route>
 
       {/* Catch-all */}
       <Route path="*" element={<Navigate to="/public" replace />} />

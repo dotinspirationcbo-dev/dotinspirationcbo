@@ -49,7 +49,7 @@ a   { color: inherit; text-decoration: none; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
 .section   { padding: 80px 0; }
 .section--alt { background: var(--gray-50); }
-.section--dark { background: var(--green-900); color: var(--white); }
+.section--dark { background: #1565C0; color: var(--white); }
 
 .section-label {
   display: inline-block;
@@ -75,7 +75,7 @@ a   { color: inherit; text-decoration: none; }
   max-width: 600px;
   line-height: 1.7;
 }
-.section--dark .section-subtitle { color: #a7f3d0; }
+.section--dark .section-subtitle { color: rgba(255,255,255,.82); }
 .section--dark .section-title    { color: var(--white); }
 .section--dark .section-label    { color: var(--green-100); }
 
@@ -128,7 +128,7 @@ a   { color: inherit; text-decoration: none; }
 
 /* ── Top bar ─────────────────────────────────────────────── */
 .top-bar {
-  background: var(--green-900);
+  background: #0D47A1;
   color: rgba(255,255,255,.75);
   font-size: 0.78rem;
   border-bottom: 1px solid rgba(255,255,255,.08);
@@ -218,7 +218,7 @@ a   { color: inherit; text-decoration: none; }
 
 /* ── Hero ─────────────────────────────────────────────────── */
 .hero {
-  background: linear-gradient(135deg, var(--green-900) 0%, var(--green-700) 60%, var(--green-600) 100%);
+  background: linear-gradient(135deg, #1565C0 0%, #1976D2 55%, #2196F3 100%);
   color: var(--white);
   padding: 100px 24px 90px;
   text-align: center;
@@ -443,7 +443,7 @@ a   { color: inherit; text-decoration: none; }
   box-shadow: var(--shadow-sm);
 }
 .bank-details__header {
-  background: var(--green-800);
+  background: #1565C0;
   color: var(--white);
   padding: 20px 28px;
   font-weight: 700;
@@ -576,7 +576,7 @@ a   { color: inherit; text-decoration: none; }
   padding: 32px;
   border-radius: 12px;
 }
-.mv-card--mission { background: var(--green-900); color: var(--white); }
+.mv-card--mission { background: #1565C0; color: var(--white); }
 .mv-card--vision  { background: var(--green-100); color: var(--green-900); }
 .mv-card__label {
   font-size: 0.72rem;
@@ -604,7 +604,7 @@ a   { color: inherit; text-decoration: none; }
 
 /* ── Page Hero (inner pages) ──────────────────────────────── */
 .page-hero {
-  background: linear-gradient(135deg, var(--green-900), var(--green-700));
+  background: linear-gradient(135deg, #1565C0, #2196F3);
   color: var(--white);
   padding: 64px 24px;
   text-align: center;
@@ -614,7 +614,7 @@ a   { color: inherit; text-decoration: none; }
 
 /* ── Footer ───────────────────────────────────────────────── */
 .pub-footer {
-  background: var(--green-900);
+  background: #0D47A1;
   color: rgba(255,255,255,.85);
   padding: 56px 24px 28px;
 }

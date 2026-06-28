@@ -1,0 +1,289 @@
+# Dot Inspiration CBO - Final Feature Enhancement
+
+You are working on an existing production website.
+
+This is NOT a redesign.
+
+Do NOT rebuild the application.
+
+Do NOT change the technology stack.
+
+Do NOT break existing routing or functionality.
+
+Extend the existing project while preserving all current features.
+
+---
+
+## PRIMARY OBJECTIVE
+
+Transform the website into a professional NGO platform where nearly all website content can be managed through the Admin Portal instead of editing code.
+
+Everything added should integrate with the existing Admin Portal.
+
+---
+
+# 1. LEADERSHIP MANAGEMENT
+
+Create a complete Leadership Management module.
+
+Public page:
+
+/leadership
+
+The page should display professional leadership profiles.
+
+Each profile includes:
+
+* Photo
+* Full name
+* Position
+* Biography
+* Qualifications
+* Department
+* Email (optional)
+* Phone (optional)
+* LinkedIn (optional)
+* Display order
+* Active/Inactive status
+
+Clicking a profile opens a detailed page.
+
+Inside Admin Portal create:
+
+Leadership Management
+
+Administrator can:
+
+* Add leader
+* Edit leader
+* Delete leader
+* Upload photo
+* Reorder leaders
+* Hide/show leaders
+* Feature leaders
+
+Changes should appear immediately on the website without editing code.
+
+---
+
+# 2. CAREERS & OPPORTUNITIES
+
+Create a complete Opportunities Portal.
+
+Public page:
+
+/careers
+
+Categories:
+
+* Internal Jobs
+* Volunteer Opportunities
+* Internships
+* Procurement
+* Scholarships
+* Community Opportunities
+
+Every opportunity includes:
+
+* Title
+* Description
+* Category
+* Location
+* Employment Type
+* Deadline
+* Requirements
+* Salary (optional)
+* Featured badge
+* Apply button
+
+Provide search and filtering.
+
+---
+
+Inside Admin Portal create:
+
+Opportunity Management
+
+Administrator can:
+
+* Add opportunity
+* Edit opportunity
+* Delete opportunity
+* Publish
+* Unpublish
+* Archive
+* Duplicate
+* Pin featured jobs
+
+Automatically archive expired opportunities.
+
+---
+
+# 3. EXTERNAL OPPORTUNITIES
+
+Create an External Opportunities section.
+
+IMPORTANT
+
+Do NOT scrape websites.
+
+Instead build a modular integration system that supports official RSS feeds and APIs where available.
+
+Design the architecture so administrators can enable or disable external sources.
+
+Display:
+
+Organisation
+
+Job title
+
+Country
+
+Deadline
+
+Official Apply button
+
+Source
+
+Every Apply button must open the official website.
+
+---
+
+# 4. RESOURCES MODULE
+
+Create a Resources page.
+
+Manage from Admin Portal.
+
+Include:
+
+Annual Reports
+
+Strategic Plans
+
+Financial Reports
+
+Policies
+
+Downloads
+
+Upload PDFs without code changes.
+
+---
+
+# 5. PARTNERS MODULE
+
+Create a Partners page.
+
+Manage from Admin Portal.
+
+Administrator can:
+
+Upload logo
+
+Partner description
+
+Partner category
+
+Website link
+
+Display order
+
+Active/Inactive
+
+---
+
+# 6. GALLERY MANAGEMENT
+
+Upgrade the Gallery.
+
+Administrator can:
+
+Create albums
+
+Upload photos
+
+Upload videos (optional)
+
+Categorize media
+
+Hide/show albums
+
+---
+
+# 7. HOMEPAGE IMPROVEMENTS
+
+Improve the homepage while keeping the existing branding.
+
+Add:
+
+* Better hero section
+* Trust badges
+* Why We Exist
+* Animated impact counters
+* How We Work section
+* Success stories
+* Partners preview
+* Accountability section
+* Better call-to-action
+* Improved footer
+
+---
+
+# 8. CMS IMPROVEMENTS
+
+Where appropriate, move existing hardcoded website content into editable Admin Portal sections.
+
+Allow administrators to edit:
+
+Homepage text
+
+Mission
+
+Vision
+
+Programs
+
+Statistics
+
+Testimonials
+
+Contact details
+
+Footer
+
+Without changing code.
+
+---
+
+# 9. PERFORMANCE
+
+Improve:
+
+SEO
+
+Accessibility
+
+Mobile responsiveness
+
+Image optimization
+
+Lazy loading
+
+Performance
+
+Without changing the existing design language.
+
+---
+
+# 10. FINAL REPORT
+
+After implementation provide:
+
+* New database tables
+* Admin Portal features added
+* Public pages added
+* Manual configuration required
+* Future recommendations
+
+The objective is to build a scalable NGO Content Management System while preserving the existing website and functionality.

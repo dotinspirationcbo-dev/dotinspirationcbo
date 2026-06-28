@@ -25,7 +25,7 @@ export async function getAllOpportunities(
   }
 
   const where = conditions.length ? `WHERE ${conditions.join(" AND ")}` : "";
-  const sql = `SELECT * FROM opportunities ${where} ORDER BY deadline ASC NULLS LAST, created_at DESC`;
+  const sql = `SELECT * FROM opportunities ${where} ORDER BY is_featured DESC, deadline ASC NULLS LAST, created_at DESC`;
   const { rows } = await pool.query<Opportunity>(sql, params);
   return rows;
 }
@@ -40,8 +40,9 @@ export async function getOpportunityById(id: number): Promise<Opportunity | null
 
 export async function createOpportunity(dto: CreateOpportunityDto): Promise<Opportunity> {
   const { rows } = await pool.query<Opportunity>(
-    `INSERT INTO opportunities (title, type, description, requirements, location, deadline, status)
-     VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *`,
+    `INSERT INTO opportunities
+       (title, type, description, requirements, location, deadline, status, employment_type, salary, is_featured)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING *`,
     [
       dto.title,
       dto.type,
@@ -50,6 +51,9 @@ export async function createOpportunity(dto: CreateOpportunityDto): Promise<Oppo
       dto.location ?? null,
       dto.deadline ?? null,
       dto.status ?? "open",
+      dto.employment_type ?? null,
+      dto.salary ?? null,
+      dto.is_featured ?? false,
     ]
   );
   return rows[0];
@@ -75,9 +79,6 @@ export async function updateOpportunity(
 }
 
 export async function deleteOpportunity(id: number): Promise<boolean> {
-  const { rowCount } = await pool.query(
-    "DELETE FROM opportunities WHERE id = $1",
-    [id]
-  );
+  const { rowCount } = await pool.query("DELETE FROM opportunities WHERE id = $1", [id]);
   return (rowCount ?? 0) > 0;
 }

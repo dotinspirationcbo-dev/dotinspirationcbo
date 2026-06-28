@@ -16,17 +16,25 @@ CREATE TABLE IF NOT EXISTS gallery_images (
 
 -- ── Opportunities ─────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS opportunities (
-  id           SERIAL        PRIMARY KEY,
-  title        VARCHAR(255)  NOT NULL,
-  type         VARCHAR(50)   NOT NULL,
-  description  TEXT,
-  requirements TEXT,
-  location     VARCHAR(255),
-  deadline     DATE,
-  status       VARCHAR(50)   NOT NULL DEFAULT 'open',
-  created_at   TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
-  updated_at   TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+  id              SERIAL        PRIMARY KEY,
+  title           VARCHAR(255)  NOT NULL,
+  type            VARCHAR(50)   NOT NULL,
+  description     TEXT,
+  requirements    TEXT,
+  location        VARCHAR(255),
+  deadline        DATE,
+  status          VARCHAR(50)   NOT NULL DEFAULT 'open',
+  employment_type VARCHAR(50),
+  salary          VARCHAR(255),
+  is_featured     BOOLEAN       NOT NULL DEFAULT FALSE,
+  created_at      TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
+  updated_at      TIMESTAMPTZ   NOT NULL DEFAULT NOW()
 );
+
+-- ── Add new opportunity columns to existing tables (idempotent) ──
+ALTER TABLE opportunities ADD COLUMN IF NOT EXISTS employment_type VARCHAR(50);
+ALTER TABLE opportunities ADD COLUMN IF NOT EXISTS salary VARCHAR(255);
+ALTER TABLE opportunities ADD COLUMN IF NOT EXISTS is_featured BOOLEAN NOT NULL DEFAULT FALSE;
 
 -- ── Site content (key-value) ──────────────────────────────────
 CREATE TABLE IF NOT EXISTS site_content (
@@ -51,21 +59,67 @@ CREATE TABLE IF NOT EXISTS contact_messages (
 
 -- ── Leadership ────────────────────────────────────────────────
 CREATE TABLE IF NOT EXISTS leadership (
+  id             SERIAL        PRIMARY KEY,
+  name           VARCHAR(255)  NOT NULL,
+  role           VARCHAR(255)  NOT NULL,
+  bio            TEXT,
+  photo_url      TEXT,
+  sort_order     INTEGER       NOT NULL DEFAULT 0,
+  is_published   BOOLEAN       NOT NULL DEFAULT TRUE,
+  qualifications TEXT,
+  department     VARCHAR(255),
+  email          VARCHAR(255),
+  phone          VARCHAR(100),
+  linkedin_url   TEXT,
+  is_featured    BOOLEAN       NOT NULL DEFAULT FALSE,
+  created_at     TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
+  updated_at     TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+);
+
+-- ── Add new leadership columns to existing tables (idempotent) ──
+ALTER TABLE leadership ADD COLUMN IF NOT EXISTS qualifications TEXT;
+ALTER TABLE leadership ADD COLUMN IF NOT EXISTS department     VARCHAR(255);
+ALTER TABLE leadership ADD COLUMN IF NOT EXISTS email         VARCHAR(255);
+ALTER TABLE leadership ADD COLUMN IF NOT EXISTS phone         VARCHAR(100);
+ALTER TABLE leadership ADD COLUMN IF NOT EXISTS linkedin_url  TEXT;
+ALTER TABLE leadership ADD COLUMN IF NOT EXISTS is_featured   BOOLEAN NOT NULL DEFAULT FALSE;
+
+-- ── Resources ─────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS resources (
   id           SERIAL        PRIMARY KEY,
-  name         VARCHAR(255)  NOT NULL,
-  role         VARCHAR(255)  NOT NULL,
-  bio          TEXT,
-  photo_url    TEXT,
-  sort_order   INTEGER       NOT NULL DEFAULT 0,
+  title        VARCHAR(255)  NOT NULL,
+  category     VARCHAR(100)  NOT NULL DEFAULT 'other',
+  description  TEXT,
+  file_url     TEXT,
+  file_name    VARCHAR(255),
+  year         INTEGER,
   is_published BOOLEAN       NOT NULL DEFAULT TRUE,
+  sort_order   INTEGER       NOT NULL DEFAULT 0,
   created_at   TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
   updated_at   TIMESTAMPTZ   NOT NULL DEFAULT NOW()
 );
 
+-- ── Partners ──────────────────────────────────────────────────
+CREATE TABLE IF NOT EXISTS partners (
+  id          SERIAL        PRIMARY KEY,
+  name        VARCHAR(255)  NOT NULL,
+  description TEXT,
+  category    VARCHAR(100)  NOT NULL DEFAULT 'other',
+  logo_url    TEXT,
+  website_url TEXT,
+  sort_order  INTEGER       NOT NULL DEFAULT 0,
+  is_active   BOOLEAN       NOT NULL DEFAULT TRUE,
+  created_at  TIMESTAMPTZ   NOT NULL DEFAULT NOW(),
+  updated_at  TIMESTAMPTZ   NOT NULL DEFAULT NOW()
+);
+
 -- ── CHECK constraints (idempotent) ────────────────────────────
+-- Opportunities: drop old type constraint and recreate with expanded types
+ALTER TABLE opportunities DROP CONSTRAINT IF EXISTS opportunities_type_check;
+
 DO $$ BEGIN
   ALTER TABLE opportunities ADD CONSTRAINT opportunities_type_check
-    CHECK (type IN ('job', 'volunteer', 'internship'));
+    CHECK (type IN ('job', 'volunteer', 'internship', 'procurement', 'scholarship', 'community'));
 EXCEPTION WHEN duplicate_object THEN NULL;
 END $$;
 
@@ -113,6 +167,16 @@ CREATE TRIGGER contact_messages_updated_at
 DROP TRIGGER IF EXISTS leadership_updated_at         ON leadership;
 CREATE TRIGGER leadership_updated_at
   BEFORE UPDATE ON leadership
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+DROP TRIGGER IF EXISTS resources_updated_at          ON resources;
+CREATE TRIGGER resources_updated_at
+  BEFORE UPDATE ON resources
+  FOR EACH ROW EXECUTE FUNCTION set_updated_at();
+
+DROP TRIGGER IF EXISTS partners_updated_at           ON partners;
+CREATE TRIGGER partners_updated_at
+  BEFORE UPDATE ON partners
   FOR EACH ROW EXECUTE FUNCTION set_updated_at();
 `;
 

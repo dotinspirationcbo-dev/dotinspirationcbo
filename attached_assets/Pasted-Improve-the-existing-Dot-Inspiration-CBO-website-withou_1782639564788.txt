@@ -1,0 +1,301 @@
+Improve the existing Dot Inspiration CBO website without changing the current technology stack, routing, functionality, or breaking any existing pages.
+
+This is an enhancement project, NOT a redesign from scratch.
+
+Keep all existing functionality working while improving the professionalism, user experience, accessibility, responsiveness, and donor appeal.
+
+Please make the following improvements.
+
+========================
+1. HERO SECTION
+========================
+
+Replace the current hero with a stronger NGO-focused message.
+
+Headline:
+"Building Stronger Communities Through Youth Empowerment, Education and Sustainable Development"
+
+Supporting text:
+"Dot Inspiration Community Based Organization (DOT INSPIRATION CBO) is a registered non-profit organization working alongside communities in Mukono District, Uganda to improve education, livelihoods, youth empowerment, health and environmental sustainability through locally-led solutions."
+
+Primary buttons:
+• Explore Our Programs
+• Become a Partner
+
+Secondary button:
+• Donate
+
+Add subtle animations without hurting performance.
+
+========================
+2. TRUST BAR
+========================
+
+Immediately below the hero add a clean trust section showing:
+
+✓ Registered Community Based Organization
+
+✓ Non-Profit
+
+✓ Non-Political
+
+✓ Non-Sectarian
+
+✓ Community-Led
+
+✓ Serving Mukono District
+
+✓ Established in 2026
+
+Display these as modern cards or badges.
+
+========================
+3. IMPACT SECTION
+========================
+
+Keep the existing statistics but redesign them into attractive animated counters.
+
+Include:
+
+12,000+
+Community Members Reached
+
+3,500+
+Youth Empowered
+
+25+
+Community Projects
+
+15
+Communities Served
+
+Add smooth count-up animation when the section enters the viewport.
+
+========================
+4. WHY WE EXIST
+========================
+
+Insert a completely new section after the statistics.
+
+Title:
+Why We Exist
+
+Content:
+
+"Many communities continue to face challenges including youth unemployment, limited educational opportunities, poverty, environmental degradation and unequal access to development opportunities.
+
+Dot Inspiration CBO works hand in hand with local communities to develop sustainable, community-driven solutions that improve lives and create lasting impact."
+
+Include a relevant illustration or image.
+
+========================
+5. PROGRAMS
+========================
+
+Keep the existing four programmes.
+
+Improve each card by adding:
+
+• representative image
+• icon
+• beneficiary group
+• short description
+• key outcomes
+• Learn More button
+
+Add hover animations.
+
+========================
+6. OUR APPROACH
+========================
+
+Add a new section titled:
+
+How We Work
+
+Display a horizontal process:
+
+Community Needs Assessment
+↓
+
+Community Engagement
+↓
+
+Programme Design
+↓
+
+Implementation
+↓
+
+Monitoring & Evaluation
+↓
+
+Sustainable Community Ownership
+
+Use icons and connecting lines.
+
+========================
+7. IMPACT STORIES
+========================
+
+Replace generic placeholders with professional story cards.
+
+Each card should contain:
+
+photo
+
+beneficiary name
+
+programme
+
+short success story
+
+Read More button
+
+Use realistic placeholder content that can easily be replaced later.
+
+========================
+8. PARTNERS
+========================
+
+Create a dedicated Partners section.
+
+Use logo placeholders in grayscale.
+
+Include categories:
+
+Government
+
+Schools
+
+Health Centres
+
+Community Organisations
+
+Private Sector
+
+International Partners
+
+Leave placeholders so logos can be added later.
+
+========================
+9. TRANSPARENCY
+========================
+
+Add a section titled
+
+Accountability & Transparency
+
+Include cards for
+
+Annual Reports
+
+Strategic Plan
+
+Governance
+
+Policies
+
+Financial Accountability
+
+If files don't exist yet, show Coming Soon.
+
+========================
+10. CALL TO ACTION
+========================
+
+Create a full-width section before the footer.
+
+Headline:
+
+Together We Can Build Stronger Communities
+
+Text:
+
+Whether you volunteer, donate, partner or advocate for our mission, your support helps transform lives across Mukono District.
+
+Buttons:
+
+Volunteer
+
+Partner
+
+Donate
+
+========================
+11. FOOTER
+========================
+
+Expand the footer.
+
+Include:
+
+About
+
+Programs
+
+Resources
+
+Contact
+
+Newsletter signup
+
+Office hours
+
+Registration information
+
+Social links
+
+Privacy Policy
+
+Terms of Use
+
+Copyright
+
+Keep all existing contact information.
+
+========================
+12. DESIGN IMPROVEMENTS
+========================
+
+Improve spacing.
+
+Improve typography.
+
+Improve mobile responsiveness.
+
+Improve button styles.
+
+Improve section transitions.
+
+Use subtle scroll animations.
+
+Improve image presentation.
+
+Improve accessibility.
+
+Improve SEO metadata.
+
+Improve page loading performance.
+
+========================
+13. IMPORTANT
+========================
+
+DO NOT remove any existing functionality.
+
+DO NOT change the routing.
+
+DO NOT delete existing pages.
+
+DO NOT change the backend.
+
+DO NOT break responsiveness.
+
+DO NOT introduce unnecessary dependencies.
+
+Reuse existing components where possible.
+
+Maintain the current colour palette and branding while making the site look comparable to a professional international NGO website.
+
+After completing the work, summarize every change made.

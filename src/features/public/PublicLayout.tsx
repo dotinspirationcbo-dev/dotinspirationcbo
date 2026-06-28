@@ -16,7 +16,7 @@ export function PublicLayout() {
       <div className="top-bar">
         <div className="top-bar__inner">
           <span className="top-bar__tagline">
-            Dot Inspiration CBO · Empowering Youth Across Africa Since 2026
+            Dot Inspiration CBO · Empowering Communities Across Mukono District Since 2026
           </span>
           <div className="top-bar__contact">
             <a href="mailto:info@dotinspirationcbo.org" className="top-bar__link">
@@ -58,7 +58,7 @@ export function PublicLayout() {
 
           <div className="pub-nav__cta">
             <Link to="/public/contact" className="btn btn-nav-outline">
-              Join Us
+              Get Involved
             </Link>
             <Link to="/public/support" className="btn btn-primary">
               Donate
@@ -71,19 +71,33 @@ export function PublicLayout() {
         <Outlet />
       </main>
 
+      {/* ── Footer ── */}
       <footer className="pub-footer">
         <div className="pub-footer__grid">
+          {/* Brand */}
           <div className="pub-footer__brand">
             <img src="/logo.png" alt="Dot Inspiration CBO" className="pub-footer__logo" />
             <p>
-              Serving Mukono District and surrounding communities since 2026.
-              We deliver education, health, economic empowerment, and
-              environmental programmes that create lasting change.
+              Dot Inspiration Community Based Organization is a registered non-profit
+              serving Mukono District and surrounding communities since 2026 through
+              education, youth empowerment, health, and sustainable development.
             </p>
+            <div className="footer-social">
+              <a href="#" className="footer-social__link" title="Facebook" aria-label="Facebook">f</a>
+              <a href="#" className="footer-social__link" title="Twitter / X" aria-label="X">𝕏</a>
+              <a href="#" className="footer-social__link" title="Instagram" aria-label="Instagram">▣</a>
+              <a href="#" className="footer-social__link" title="LinkedIn" aria-label="LinkedIn">in</a>
+              <a href="#" className="footer-social__link" title="YouTube" aria-label="YouTube">▶</a>
+            </div>
+            <div className="footer-reg">
+              Registered CBO · Uganda · Non-Profit · Non-Political · Non-Sectarian<br />
+              Office Hours: Mon – Fri 8:00 AM – 5:00 PM · Sat 9:00 AM – 1:00 PM (EAT)
+            </div>
           </div>
 
+          {/* Quick Links */}
           <div className="pub-footer__col">
-            <h4>Quick Links</h4>
+            <h4>Explore</h4>
             <ul>
               {NAV_LINKS.map(({ to, label }) => (
                 <li key={to}><Link to={to}>{label}</Link></li>
@@ -92,24 +106,45 @@ export function PublicLayout() {
             </ul>
           </div>
 
+          {/* Programs */}
           <div className="pub-footer__col">
             <h4>Programs</h4>
             <ul>
-              <li><Link to="/public/programs">Education &amp; Literacy</Link></li>
-              <li><Link to="/public/programs">Community Health</Link></li>
-              <li><Link to="/public/programs">Economic Empowerment</Link></li>
-              <li><Link to="/public/programs">Environmental Sustainability</Link></li>
+              <li><Link to="/public/programs">Youth Empowerment</Link></li>
+              <li><Link to="/public/programs">Education Support</Link></li>
+              <li><Link to="/public/programs">Community Outreach</Link></li>
+              <li><Link to="/public/programs">Economic Development</Link></li>
             </ul>
           </div>
 
+          {/* Contact + Newsletter */}
           <div className="pub-footer__col">
-            <h4>Contact</h4>
+            <h4>Contact Us</h4>
+            <p style={{ marginBottom: 12 }}>
+              Nantabulirwa, Goma Division<br />
+              Mukono District, Uganda
+            </p>
             <p>
               <a href="tel:+256794722080">+256 794 722 080</a><br />
               <a href="mailto:info@dotinspirationcbo.org">
                 info@dotinspirationcbo.org
               </a>
             </p>
+
+            <div className="footer-newsletter">
+              <span className="footer-newsletter__label">Stay Updated</span>
+              <div className="footer-newsletter__form">
+                <input
+                  className="footer-newsletter__input"
+                  type="email"
+                  placeholder="Your email address"
+                  aria-label="Email for newsletter"
+                />
+                <button className="footer-newsletter__btn" type="button">
+                  Subscribe
+                </button>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -117,7 +152,11 @@ export function PublicLayout() {
           <span>
             &copy; {new Date().getFullYear()} Dot Inspiration CBO. All rights reserved.
           </span>
-          <span>Registered CBO · Serving Mukono District since 2026 · Uganda</span>
+          <span className="pub-footer__bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <span>Registered CBO · Mukono District · Uganda</span>
+          </span>
         </div>
       </footer>
     </>
